@@ -6,6 +6,8 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Rigidbody))]
 public class SCR_Player : MonoBehaviour {
 
+    public GameObject playerMesh;
+
     [Header("Movement")]
     private Rigidbody myRigidbody;
     private float speed = 50;
@@ -48,6 +50,8 @@ public class SCR_Player : MonoBehaviour {
     [Header("UI")]
     public GameObject winMenu;
     public GameObject lostMenu;
+    public AudioClip gameOverSound;
+    public AudioSource source;
 
     private void Start()
     {
@@ -60,13 +64,26 @@ public class SCR_Player : MonoBehaviour {
 
         winMenu.SetActive(false);
         lostMenu.SetActive(false);
+
+        source = GetComponent<AudioSource>();
+        source.playOnAwake = false;
+        source.loop = false;
     }
-    
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.H))
+            Dash();
+    }
+
     #region MOVEMENT
     public void Move(float _direction)
     {
         myRigidbody.AddForce(Vector3.right * _direction * speed);
         LimitVelocity();
+
+        if(_direction != 0)
+            playerMesh.transform.rotation = Quaternion.LookRotation(Vector3.forward * _direction);
     }
 
     public void Dash()
@@ -77,19 +94,25 @@ public class SCR_Player : MonoBehaviour {
             float direction = 1;
             if (myRigidbody.velocity.x < 0)
                 direction = -1;
-            myRigidbody.AddForce(Vector3.right * dashForce * direction);
+            myRigidbody.AddForce(playerMesh.transform.right * dashForce * direction);
             limitVelocity.x = tempLimitDash;
-            StartCoroutine(WaitToResetDash());
-        }
-        
+            StartCoroutine(WaitToStopDash());
+        }        
     }
 
-    IEnumerator WaitToResetDash()
+    IEnumerator WaitToStopDash()
     {
         canApplyDash = false;
         yield return new WaitForSeconds(dashCooldown);
         myRigidbody.velocity = new Vector3(0, myRigidbody.velocity.y);
         limitVelocity.x = standardLimit;
+        //Extra cooldown
+        StartCoroutine(WaitToResetDash());
+    }
+
+    IEnumerator WaitToResetDash()
+    {
+        yield return new WaitForSeconds(0.5f);        
         canApplyDash = true;
     }
 
@@ -180,8 +203,11 @@ public class SCR_Player : MonoBehaviour {
                     break;
                 case "Goal":
                     {
-                        if(!isPaused)
+                        if (!isPaused)
+                        {
                             GameWon();
+                            collision.gameObject.GetComponent<SCR_EmitSound>().PlaySound();
+                        }
                     }
                     break;
                 default:
@@ -243,6 +269,8 @@ public class SCR_Player : MonoBehaviour {
         Debug.Log("Game Over");
         FinishLevel(lostMenu.transform);
         lostMenu.SetActive(true);
+        source.clip = gameOverSound;
+        source.Play();
     }
     public void GameWon()
     {

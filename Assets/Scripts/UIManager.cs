@@ -37,15 +37,20 @@ public class UIManager : MonoBehaviour {
     public void OnExtrasClicked()
     {
         ExtrasPanel.SetActive(true);
-        MainPanel.GetComponent<FadeIn>().FadeOutUI();
-        ExtrasPanel.GetComponent<FadeIn>().FadeInUI();
+        OptionsPanel.GetComponent<FadeIn>().shouldFadeOut = false;
+        OptionsPanel.GetComponent<FadeIn>().shouldFadeIn = true;
+        MainPanel.GetComponent<FadeIn>().shouldFadeIn = false;
+        MainPanel.GetComponent<FadeIn>().shouldFadeOut = true;
     }
 
     public void OnOptionsClicked()
     {
         OptionsPanel.SetActive(true);
-        MainPanel.GetComponent<FadeIn>().shouldFadeOut = true;
+        OptionsPanel.GetComponent<FadeIn>().shouldFadeOut = false;
         OptionsPanel.GetComponent<FadeIn>().shouldFadeIn = true;
+        MainPanel.GetComponent<FadeIn>().shouldFadeIn = false;
+        MainPanel.GetComponent<FadeIn>().shouldFadeOut = true;
+
         OptionsMainPanel.SetActive(true);
         optionsLevelMenu = 1;
     }
@@ -100,7 +105,9 @@ public class UIManager : MonoBehaviour {
             case 1:
                 {
                     OptionsPanel.GetComponent<FadeIn>().shouldFadeOut = true;
+                    OptionsPanel.GetComponent<FadeIn>().shouldFadeIn = false;
                     MainPanel.GetComponent<FadeIn>().shouldFadeIn = true;
+                    MainPanel.GetComponent<FadeIn>().shouldFadeOut = false;
 
                     break;
                 }
@@ -151,8 +158,14 @@ public class UIManager : MonoBehaviour {
 
     public void OnExtraBackClicked()
     {
-        ExtrasPanel.GetComponent<FadeIn>().shouldFadeOut = true;
         MainPanel.GetComponent<FadeIn>().shouldFadeIn = true;
+        MainPanel.GetComponent<FadeIn>().shouldFadeOut = false;
+        ExtrasPanel.GetComponent<FadeIn>().shouldFadeOut = true;
+        ExtrasPanel.GetComponent<FadeIn>().shouldFadeIn = false;
     }
+    #endregion
+
+    #region Customization
+
     #endregion
 }
