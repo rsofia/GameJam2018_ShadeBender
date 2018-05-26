@@ -8,8 +8,13 @@ public class SCR_Player : MonoBehaviour {
 
     [Header("Movement")]
     private Rigidbody myRigidbody;
-    private float speed = 35;
-    private Vector2 limitVelocity = new Vector2(10, 15);
+    private float speed = 50;
+    private float standardLimit = 5;
+    private Vector2 limitVelocity = new Vector2(5, 10);
+    private float dashForce = 100;
+    private float tempLimitDash = 15;
+    private bool canApplyDash = true;
+    private float dashCooldown = 5;
 
     [Header("Jump")]
     [Tooltip("La poscicion (centro) de los pies del personaje para checar si tocan el suelo")]
@@ -40,6 +45,10 @@ public class SCR_Player : MonoBehaviour {
     [HideInInspector]
     public bool isPaused = false;
 
+    [Header("UI")]
+    public GameObject winMenu;
+    public GameObject lostMenu;
+
     private void Start()
     {
         myRigidbody = GetComponent<Rigidbody>();
@@ -48,6 +57,9 @@ public class SCR_Player : MonoBehaviour {
         levelProperties = FindObjectOfType<SCR_Level>();
         timer = FindObjectOfType<SCR_Timer>();
         AssignRandomColor();
+
+        winMenu.SetActive(false);
+        lostMenu.SetActive(false);
     }
 
     #region MOVEMENT
@@ -55,6 +67,29 @@ public class SCR_Player : MonoBehaviour {
     {
         myRigidbody.AddForce(Vector3.right * _direction * speed);
         LimitVelocity();
+    }
+
+    public void Dash()
+    {
+        if(canApplyDash)
+        {
+            float direction = 1;
+            if (myRigidbody.velocity.x < 0)
+                direction = -1;
+            myRigidbody.AddForce(Vector3.right * dashForce * direction);
+            limitVelocity.x = tempLimitDash;
+            StartCoroutine(WaitToResetDash());
+        }
+        
+    }
+
+    IEnumerator WaitToResetDash()
+    {
+        canApplyDash = false;
+        yield return new WaitForSeconds(dashCooldown);
+        myRigidbody.velocity = new Vector3(0, myRigidbody.velocity.y);
+        limitVelocity.x = standardLimit;
+        canApplyDash = true;
     }
 
     public void LimitVelocity()
@@ -126,19 +161,26 @@ public class SCR_Player : MonoBehaviour {
                     {
                         if (collision.gameObject.GetComponent<SCR_Enemy>() != null)
                         {
+                            collision.gameObject.GetComponent<SCR_Enemy>().PlaySound();
                             RestHealth(collision.gameObject.GetComponent<SCR_Enemy>().damage);
                         }
                     }
                     break;
                 case "Pickup":
                     {
-                        AddScore(collision.gameObject.GetComponent<SCR_Pickup>().points);
-                        Destroy(collision.gameObject);
+                        SCR_Pickup temp = collision.gameObject.GetComponent<SCR_Pickup>();
+                        if(temp.isAlive)
+                        {
+                            AddScore(temp.points);
+                            temp.Pick();
+                        }
+                       
                     }
                     break;
                 case "Goal":
                     {
-                        GameWon();
+                        if(!isPaused)
+                            GameWon();
                     }
                     break;
                 default:
@@ -146,6 +188,22 @@ public class SCR_Player : MonoBehaviour {
             }
         }
         
+    }
+
+    //Evitar usar trigger enter ya que puede causar problemas con ignore collision
+    private void OnTriggerEnter(Collider other)
+    {
+        switch (other.tag)
+        {
+            case "Hazard":
+                {
+                    other.GetComponent<SCR_EmitSound>().PlaySound();
+                    RestHealth(1);
+                }
+                break;
+            default:
+                break;
+        }
     }
     #endregion
 
@@ -182,12 +240,21 @@ public class SCR_Player : MonoBehaviour {
     public void GameOver()
     {
         Debug.Log("Game Over");
-        CalculateFinalScore();
+        FinishLevel(lostMenu.transform);
+        lostMenu.SetActive(true);
     }
     public void GameWon()
     {
         Debug.Log("Game won");
-        CalculateFinalScore();
+        FinishLevel(winMenu.transform);
+        winMenu.SetActive(true);
+    }
+
+    private void FinishLevel(Transform _menu)
+    {
+        FindObjectOfType<SCR_Pause>().PauseGame(false);
+        _menu.Find("TXT_Puntaje").GetComponent<Text>().text = "Final Score: " + CalculateFinalScore();
+
     }
     #endregion
 
@@ -201,9 +268,22 @@ public class SCR_Player : MonoBehaviour {
     {
         txtScore.text = score.ToString();
     }
-    private void CalculateFinalScore()
+    private string CalculateFinalScore()
     {
-        
+        string result = "";
+        float extraScore = 0;
+
+        if (timer.totalLevelTime <= levelProperties.estimatedTimeInSeconds / 3)
+            extraScore += (100/ timer.totalLevelTime) * 100;
+        else if (timer.totalLevelTime <= levelProperties.estimatedTimeInSeconds / 2)
+            extraScore += (50 / timer.totalLevelTime) * 100;
+        else if (timer.totalLevelTime <= levelProperties.estimatedTimeInSeconds)
+            extraScore += (25 / timer.totalLevelTime) * 100;
+        extraScore = Mathf.RoundToInt(extraScore);
+        result = (score + extraScore).ToString();
+        result = result + " \n Time:" + timer.totalLevelTime;
+        return result;
+
     }
     #endregion
 }

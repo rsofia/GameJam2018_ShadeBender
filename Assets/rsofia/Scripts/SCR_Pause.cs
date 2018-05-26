@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SCR_Pause : MonoBehaviour {
 
@@ -11,12 +12,13 @@ public class SCR_Pause : MonoBehaviour {
         pauseMenu.SetActive(false);
     }
 
-    public void PauseGame()
+    public void PauseGame(bool _showPause = true)
     {
         FindObjectOfType<SCR_Timer>().isPaused = true;
         FindObjectOfType<SCR_InputManager>().isPaused = true;
         FindObjectOfType<SCR_Player>().isPaused = true;
-        pauseMenu.SetActive(true);
+        if(_showPause)
+            pauseMenu.SetActive(true);
         LeanTween.pauseAll();
     }
 
@@ -31,6 +33,7 @@ public class SCR_Pause : MonoBehaviour {
 
     public void ExitLevel()
     {
-        Debug.Log("Aqui regresar al menu de inicio");
+        //Load main menu
+        SceneManager.LoadScene(1);
     }
 }

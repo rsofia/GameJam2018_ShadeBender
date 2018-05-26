@@ -13,8 +13,9 @@ public class SCR_Timer : MonoBehaviour {
     public Text txtTimerColor;
     public Text txtTimerTotal;
     [HideInInspector]
-    private float timeColor = 15;
-    private float totalLevelTime = 0;
+    public float timeColor = 15;
+    [HideInInspector]
+    public float totalLevelTime = 0;
 
     [HideInInspector]
     public bool isPaused = false;
