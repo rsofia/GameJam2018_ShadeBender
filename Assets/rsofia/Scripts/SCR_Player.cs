@@ -11,10 +11,10 @@ public class SCR_Player : MonoBehaviour {
     private float speed = 50;
     private float standardLimit = 5;
     private Vector2 limitVelocity = new Vector2(5, 10);
-    private float dashForce = 100;
-    private float tempLimitDash = 15;
+    private float dashForce = 750;
+    private float tempLimitDash = 25;
     private bool canApplyDash = true;
-    private float dashCooldown = 5;
+    private float dashCooldown = 2;
 
     [Header("Jump")]
     [Tooltip("La poscicion (centro) de los pies del personaje para checar si tocan el suelo")]
@@ -61,7 +61,7 @@ public class SCR_Player : MonoBehaviour {
         winMenu.SetActive(false);
         lostMenu.SetActive(false);
     }
-
+    
     #region MOVEMENT
     public void Move(float _direction)
     {
@@ -73,6 +73,7 @@ public class SCR_Player : MonoBehaviour {
     {
         if(canApplyDash)
         {
+            Debug.Log("Velocity: " + myRigidbody.velocity);
             float direction = 1;
             if (myRigidbody.velocity.x < 0)
                 direction = -1;
