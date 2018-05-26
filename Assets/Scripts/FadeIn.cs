@@ -50,11 +50,11 @@ public class FadeIn : MonoBehaviour {
 
     IEnumerator FadeCanvasGroupToFullAlpha(float t, CanvasGroup i)
     {
-  
-
         i.blocksRaycasts = true;
         while (i.alpha < 1.0f && shouldFadeIn)
         {
+            //shouldFadeIn = true;
+            //shouldFadeOut = false;
             Debug.Log(gameObject.name + "Fade In: " +i.alpha);
             i.alpha = i.alpha + (Time.deltaTime / t);
             yield return new WaitForEndOfFrame();
@@ -65,10 +65,11 @@ public class FadeIn : MonoBehaviour {
     IEnumerator FadeCanvasGroupToZeroAlpha(float t, CanvasGroup i)
     {
 
-
         i.blocksRaycasts = false;
         while (i.alpha > 0.0f && shouldFadeOut)
         {
+            //shouldFadeOut = true;
+            //shouldFadeIn = false;
             Debug.Log(gameObject.name + "Fade Out: " + i.alpha);
             i.alpha = i.alpha - (Time.deltaTime / t);
             yield return new WaitForEndOfFrame();
