@@ -70,12 +70,6 @@ public class SCR_Player : MonoBehaviour {
         source.loop = false;
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.H))
-            Dash();
-    }
-
     #region MOVEMENT
     public void Move(float _direction)
     {
@@ -83,7 +77,7 @@ public class SCR_Player : MonoBehaviour {
         LimitVelocity();
 
         if(_direction != 0)
-            playerMesh.transform.rotation = Quaternion.LookRotation(Vector3.forward * _direction);
+            playerMesh.transform.rotation = Quaternion.LookRotation(Vector3.right * _direction);
     }
 
     public void Dash()
@@ -140,9 +134,12 @@ public class SCR_Player : MonoBehaviour {
     private bool CanPlayerJump()
     {
         isGrounded = false;
+        
         if(Physics.Raycast(piesPersonaje.position, Vector3.down, out hit, distanceToJump))
         {
             isGrounded = hit.collider.tag == floorTag;
+            FindObjectOfType<SCR_InputManager>().playerAnim.SetBool("Jump", isGrounded);
+
         }
         return isGrounded;
     }
@@ -210,6 +207,17 @@ public class SCR_Player : MonoBehaviour {
                         }
                     }
                     break;
+                case "Floor":
+                    {
+                        if(isGrounded)
+                        {
+                            if (Physics.Raycast(piesPersonaje.position, Vector3.down, out hit, 5))
+                            {
+                                FindObjectOfType<SCR_InputManager>().playerAnim.SetBool("Jump", !isGrounded);
+                            }
+                        }
+                        break;
+                    }
                 default:
                     break;
             }

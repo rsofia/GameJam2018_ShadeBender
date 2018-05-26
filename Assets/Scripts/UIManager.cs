@@ -37,8 +37,8 @@ public class UIManager : MonoBehaviour {
     public void OnExtrasClicked()
     {
         ExtrasPanel.SetActive(true);
-        OptionsPanel.GetComponent<FadeIn>().shouldFadeOut = false;
-        OptionsPanel.GetComponent<FadeIn>().shouldFadeIn = true;
+        ExtrasPanel.GetComponent<FadeIn>().shouldFadeOut = false;
+        ExtrasPanel.GetComponent<FadeIn>().shouldFadeIn = true;
         MainPanel.GetComponent<FadeIn>().shouldFadeIn = false;
         MainPanel.GetComponent<FadeIn>().shouldFadeOut = true;
     }
