@@ -5,6 +5,7 @@ using UnityEngine;
 public class SCR_Enemy : SCR_EmitSound {
 
     public int damage = 1;
+    [Tooltip("This is the world position in x")]
     public float positionToLean = 3;
     private float timeToLean = 3;
        

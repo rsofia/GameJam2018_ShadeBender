@@ -48,6 +48,8 @@ public class SCR_Player : MonoBehaviour {
     [Header("UI")]
     public GameObject winMenu;
     public GameObject lostMenu;
+    public AudioClip gameOverSound;
+    public AudioSource source;
 
     private void Start()
     {
@@ -60,6 +62,10 @@ public class SCR_Player : MonoBehaviour {
 
         winMenu.SetActive(false);
         lostMenu.SetActive(false);
+
+        source = GetComponent<AudioSource>();
+        source.playOnAwake = false;
+        source.loop = false;
     }
     
     #region MOVEMENT
@@ -180,8 +186,11 @@ public class SCR_Player : MonoBehaviour {
                     break;
                 case "Goal":
                     {
-                        if(!isPaused)
+                        if (!isPaused)
+                        {
                             GameWon();
+                            collision.gameObject.GetComponent<SCR_EmitSound>().PlaySound();
+                        }
                     }
                     break;
                 default:
@@ -243,6 +252,8 @@ public class SCR_Player : MonoBehaviour {
         Debug.Log("Game Over");
         FinishLevel(lostMenu.transform);
         lostMenu.SetActive(true);
+        source.clip = gameOverSound;
+        source.Play();
     }
     public void GameWon()
     {
