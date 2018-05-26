@@ -23,7 +23,7 @@ public class SCR_InputManager : MonoBehaviour {
             player.Move(Input.GetAxis("Horizontal"));
             player.LimitVelocity();
             Debug.DrawRay(player.piesPersonaje.position, Vector3.down);
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.JoystickButton0))
             {
                 player.Jump();
             }
@@ -31,9 +31,14 @@ public class SCR_InputManager : MonoBehaviour {
             if (Input.GetKeyDown(KeyCode.S))
                 player.InvertColor();
 
-            if(Input.GetKeyDown(KeyCode.P))
+            if(Input.GetKeyDown(KeyCode.JoystickButton7))
             {
                 pause.PauseGame();
+            }
+
+            if(Input.GetKeyDown(KeyCode.JoystickButton1))
+            {
+                player.Dash();
             }
         }
        
