@@ -23,10 +23,16 @@ public class UIManager : MonoBehaviour {
 
     [Header("Extras GameObjects")]
     public GameObject ExtrasPanel;
-
+    public GameObject mainExtraPanel;
     public GameObject LevelSelectionPanel;
 
     public AudioManager audioMngr;
+    [Header("Extras GameObjects")]
+    public GameObject customizationPanel;
+    public Image colorDemon;
+    public Image colorAngel;
+
+
 
     #region Main Panel Functions
     public void OnQuitGameClicked()
@@ -37,8 +43,8 @@ public class UIManager : MonoBehaviour {
     public void OnExtrasClicked()
     {
         ExtrasPanel.SetActive(true);
-        OptionsPanel.GetComponent<FadeIn>().shouldFadeOut = false;
-        OptionsPanel.GetComponent<FadeIn>().shouldFadeIn = true;
+        ExtrasPanel.GetComponent<FadeIn>().shouldFadeOut = false;
+        ExtrasPanel.GetComponent<FadeIn>().shouldFadeIn = true;
         MainPanel.GetComponent<FadeIn>().shouldFadeIn = false;
         MainPanel.GetComponent<FadeIn>().shouldFadeOut = true;
     }
@@ -163,9 +169,49 @@ public class UIManager : MonoBehaviour {
         ExtrasPanel.GetComponent<FadeIn>().shouldFadeOut = true;
         ExtrasPanel.GetComponent<FadeIn>().shouldFadeIn = false;
     }
+    public void OnCustomizationClicked()
+    {
+        mainExtraPanel.SetActive(false);
+        customizationPanel.SetActive(true);
+        if(PlayerPrefs.HasKey(""))
+        {
+            colorAngel.color = SCR_CustomizationColor.colorAngel;
+            colorDemon.color = SCR_CustomizationColor.colorDemon;
+        }
+        else
+        {
+            colorAngel.color = Color.white;
+            colorDemon.color = Color.black;
+        }
+
+
+    }
     #endregion
 
-    #region Customization
+    #region Customization Functions
+    public void OnBackClickedCustom()
+    {
+        mainExtraPanel.SetActive(true);
+        customizationPanel.SetActive(false);
+    }
+    public void OnConfirmClickedCustom()
+    {
+        SCR_CustomizationColor.SetColors(colorDemon.color,colorAngel.color);
+        mainExtraPanel.SetActive(true);
+        customizationPanel.SetActive(false);
+    }
+    public void OnRestoreDefaultClicked()
+    {
+        colorDemon.color = Color.black;
+        colorAngel.color = Color.white;
+        SCR_CustomizationColor.SetColors(colorDemon.color, colorAngel.color);
+        mainExtraPanel.SetActive(true);
+        customizationPanel.SetActive(false);
+    }
+    public void UpdateColor(int _selection)
+    {
+
+    }
 
     #endregion
 }

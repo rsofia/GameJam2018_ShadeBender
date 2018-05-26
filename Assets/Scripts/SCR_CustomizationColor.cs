@@ -8,7 +8,7 @@ public class SCR_CustomizationColor : MonoBehaviour
     public static Color colorAngel;
     public static Color colorDemon;
 
-    public static void SaveAllColors()
+    static void SaveAllColors()
     {
         PlayerPrefs.SetFloat("rAngel", colorAngel.r);
         PlayerPrefs.SetFloat("gAngel", colorAngel.g);
@@ -26,6 +26,7 @@ public class SCR_CustomizationColor : MonoBehaviour
     {
         colorAngel = _angelColor;
         colorDemon = _demonColor;
+        SaveAllColors();
     }
 
 }
