@@ -5,7 +5,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using EnhancedUI.EnhancedScroller;
+using EnhancedUI.EnhancedScroller;
+
 public class LevelSelectorController : MonoBehaviour, IEnhancedScrollerDelegate
 {
 
