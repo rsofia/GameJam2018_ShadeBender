@@ -2,11 +2,14 @@
 
 public class LevelGenerator : MonoBehaviour {
 
-    public Texture2D map;
+    public static Texture2D map;
+    public Texture2D defaultMap;
 
     public ColorToPrefab[] colorMappings;
 
     void Start() {
+        if (map == null)
+            map = defaultMap;
         GenerateLevel();
     }
 

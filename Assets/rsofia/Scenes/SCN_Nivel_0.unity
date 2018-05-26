@@ -217,26 +217,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114459926430337514, guid: 5e617b8f9bdc7e3488dabe5fd12a9cc9,
-        type: 2}
-      propertyPath: map
-      value: 
-      objectReference: {fileID: 2800000, guid: 0f9f3cb1cd4352c468754deb396e9107, type: 3}
-    - target: {fileID: 114459926430337514, guid: 5e617b8f9bdc7e3488dabe5fd12a9cc9,
-        type: 2}
-      propertyPath: colorMappings.Array.data[8].color.g
-      value: 0.49019608
-      objectReference: {fileID: 0}
-    - target: {fileID: 114459926430337514, guid: 5e617b8f9bdc7e3488dabe5fd12a9cc9,
-        type: 2}
-      propertyPath: colorMappings.Array.data[8].color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114459926430337514, guid: 5e617b8f9bdc7e3488dabe5fd12a9cc9,
-        type: 2}
-      propertyPath: colorMappings.Array.data[8].color.b
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5e617b8f9bdc7e3488dabe5fd12a9cc9, type: 2}
   m_IsPrefabParent: 0
