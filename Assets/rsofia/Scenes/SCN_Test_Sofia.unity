@@ -301,91 +301,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3b8fc41384632a1489a013936a60a0a6, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &456639514 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1348107219318178, guid: 9db29671f64a54c47ad230b58e93d041,
-    type: 2}
-  m_PrefabInternal: {fileID: 672350948}
---- !u!82 &456639523
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 456639514}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - serializedVersion: 2
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
 --- !u!1001 &499561998
 Prefab:
   m_ObjectHideFlags: 0
@@ -509,16 +424,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 11
       objectReference: {fileID: 0}
-    - target: {fileID: 114852057786392096, guid: 9db29671f64a54c47ad230b58e93d041,
-        type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 114112442101027384, guid: 9db29671f64a54c47ad230b58e93d041,
-        type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 224635405330093882, guid: 9db29671f64a54c47ad230b58e93d041,
         type: 2}
       propertyPath: m_AnchorMin.y
@@ -609,33 +514,11 @@ Prefab:
       propertyPath: m_SizeDelta.y
       value: 25
       objectReference: {fileID: 0}
-    - target: {fileID: 20278905564733010, guid: 9db29671f64a54c47ad230b58e93d041,
+    - target: {fileID: 114792281151315352, guid: 9db29671f64a54c47ad230b58e93d041,
         type: 2}
-      propertyPath: orthographic size
-      value: 8.69
-      objectReference: {fileID: 0}
-    - target: {fileID: 4317503665025720, guid: 9db29671f64a54c47ad230b58e93d041, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 8.06432
-      objectReference: {fileID: 0}
-    - target: {fileID: 4317503665025720, guid: 9db29671f64a54c47ad230b58e93d041, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0.8034456
-      objectReference: {fileID: 0}
-    - target: {fileID: 4317503665025720, guid: 9db29671f64a54c47ad230b58e93d041, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: -10
-      objectReference: {fileID: 0}
-    - target: {fileID: 114786423351716966, guid: 9db29671f64a54c47ad230b58e93d041,
-        type: 2}
-      propertyPath: source
+      propertyPath: m_LookAt
       value: 
-      objectReference: {fileID: 456639523}
-    - target: {fileID: 114786423351716966, guid: 9db29671f64a54c47ad230b58e93d041,
-        type: 2}
-      propertyPath: gameOverSound
-      value: 
-      objectReference: {fileID: 8300000, guid: 97cf202839ee4b24fb157138e86f3647, type: 3}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9db29671f64a54c47ad230b58e93d041, type: 2}
   m_IsPrefabParent: 0

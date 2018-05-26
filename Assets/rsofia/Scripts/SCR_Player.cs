@@ -73,6 +73,8 @@ public class SCR_Player : MonoBehaviour {
     {
         myRigidbody.AddForce(Vector3.right * _direction * speed);
         LimitVelocity();
+
+        transform.rotation = Quaternion.LookRotation(Vector3.right * _direction);
     }
 
     public void Dash()
@@ -83,11 +85,10 @@ public class SCR_Player : MonoBehaviour {
             float direction = 1;
             if (myRigidbody.velocity.x < 0)
                 direction = -1;
-            myRigidbody.AddForce(Vector3.right * dashForce * direction);
+            myRigidbody.AddForce(transform.right * dashForce * direction);
             limitVelocity.x = tempLimitDash;
             StartCoroutine(WaitToResetDash());
-        }
-        
+        }        
     }
 
     IEnumerator WaitToResetDash()
