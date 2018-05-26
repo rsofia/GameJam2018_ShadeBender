@@ -16,6 +16,9 @@ public class SCR_Timer : MonoBehaviour {
     private float timeColor = 15;
     private float totalLevelTime = 0;
 
+    [HideInInspector]
+    public bool isPaused = false;
+
     private void Start()
     {
         if (player == null)
@@ -24,15 +27,19 @@ public class SCR_Timer : MonoBehaviour {
 
     private void Update()
     {
-        timeColor -= Time.deltaTime;
-        totalLevelTime += Time.deltaTime;
-        if (timeColor <= 0.0f)
+        if(!isPaused)
         {
-            timeColor = 15;
-            player.InvertColor();
+            timeColor -= Time.deltaTime;
+            totalLevelTime += Time.deltaTime;
+            if (timeColor <= 0.0f)
+            {
+                timeColor = 15;
+                player.InvertColor();
+            }
+            txtTimerColor.text = (timeColor / 60).ToString("00") + ":" + (timeColor % 60).ToString("00");
+            txtTimerTotal.text = (totalLevelTime / 60).ToString("00") + ":" + (totalLevelTime % 60).ToString("00");
         }
-        txtTimerColor.text = (timeColor / 60).ToString("00") + ":" + (timeColor % 60).ToString("00");
-        txtTimerTotal.text = (totalLevelTime / 60).ToString("00") + ":" + (totalLevelTime % 60).ToString("00");
+        
     }
 
     public void SetTimer(float _seconds)

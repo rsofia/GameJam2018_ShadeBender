@@ -37,6 +37,9 @@ public class SCR_Player : MonoBehaviour {
     private SCR_Level levelProperties;
     private SCR_Timer timer;
 
+    [HideInInspector]
+    public bool isPaused = false;
+
     private void Start()
     {
         myRigidbody = GetComponent<Rigidbody>();
@@ -115,30 +118,34 @@ public class SCR_Player : MonoBehaviour {
     #region COLLISION DETECTION
     private void OnCollisionEnter(Collision collision)
     {
-        switch(collision.gameObject.tag)
+        if(!isPaused)
         {
-            case "Enemy":
-                {
-                    if (collision.gameObject.GetComponent<SCR_Enemy>() != null)
+            switch (collision.gameObject.tag)
+            {
+                case "Enemy":
                     {
-                        RestHealth(collision.gameObject.GetComponent<SCR_Enemy>().damage);
+                        if (collision.gameObject.GetComponent<SCR_Enemy>() != null)
+                        {
+                            RestHealth(collision.gameObject.GetComponent<SCR_Enemy>().damage);
+                        }
                     }
-                }
-                break;
-            case "Pickup":
-                {
-                    AddScore(collision.gameObject.GetComponent<SCR_Pickup>().points);
-                    Destroy(collision.gameObject);
-                }
-                break;
-            case "Goal":
-                {
-                    GameWon();
-                }
-                break;
-            default:
-                break;
+                    break;
+                case "Pickup":
+                    {
+                        AddScore(collision.gameObject.GetComponent<SCR_Pickup>().points);
+                        Destroy(collision.gameObject);
+                    }
+                    break;
+                case "Goal":
+                    {
+                        GameWon();
+                    }
+                    break;
+                default:
+                    break;
+            }
         }
+        
     }
     #endregion
 

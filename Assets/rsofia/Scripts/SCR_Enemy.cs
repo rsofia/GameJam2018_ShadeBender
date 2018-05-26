@@ -8,6 +8,7 @@ public class SCR_Enemy : MonoBehaviour {
     public float positionToLean = 3;
     private float timeToLean = 3;
 
+   
     private void Start()
     {
         LeanTween.moveX(gameObject, positionToLean, timeToLean).setLoopPingPong();
