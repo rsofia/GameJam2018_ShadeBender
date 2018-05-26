@@ -49,16 +49,16 @@ public class FadeIn : MonoBehaviour {
         while (i.alpha < 1.0f)
         {
             i.alpha = i.alpha + (Time.deltaTime / t);
-            yield return null;
+            yield return new WaitForEndOfFrame();
         }
     }
     IEnumerator FadeCanvasGroupToZeroAlpha(float t, CanvasGroup i)
     {
         i.blocksRaycasts = false;
-        while (i.alpha > 0.01f)
+        while (i.alpha > 0.001f)
         {
             i.alpha = i.alpha - (Time.deltaTime / t);
-            yield return null;
+            yield return new WaitForEndOfFrame();
         }
     }
 

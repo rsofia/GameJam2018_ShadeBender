@@ -5,6 +5,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour {
 
@@ -137,6 +138,15 @@ public class UIManager : MonoBehaviour {
     #endregion
 
     #region Extras Functions
+    public void OnCreditsClicked()
+    {
+        SceneManager.LoadScene("Credits");
+    }
 
+    public void OnExtraBackClicked()
+    {
+        ExtrasPanel.GetComponent<FadeIn>().shouldFadeOut = true;
+        MainPanel.GetComponent<FadeIn>().shouldFadeIn = true;
+    }
     #endregion
 }
