@@ -6,6 +6,8 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Rigidbody))]
 public class SCR_Player : MonoBehaviour {
 
+    public GameObject playerMesh;
+
     [Header("Movement")]
     private Rigidbody myRigidbody;
     private float speed = 50;
@@ -67,14 +69,21 @@ public class SCR_Player : MonoBehaviour {
         source.playOnAwake = false;
         source.loop = false;
     }
-    
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.H))
+            Dash();
+    }
+
     #region MOVEMENT
     public void Move(float _direction)
     {
         myRigidbody.AddForce(Vector3.right * _direction * speed);
         LimitVelocity();
 
-        transform.rotation = Quaternion.LookRotation(Vector3.right * _direction);
+        if(_direction != 0)
+            playerMesh.transform.rotation = Quaternion.LookRotation(Vector3.forward * _direction);
     }
 
     public void Dash()
@@ -85,18 +94,25 @@ public class SCR_Player : MonoBehaviour {
             float direction = 1;
             if (myRigidbody.velocity.x < 0)
                 direction = -1;
-            myRigidbody.AddForce(transform.right * dashForce * direction);
+            myRigidbody.AddForce(playerMesh.transform.right * dashForce * direction);
             limitVelocity.x = tempLimitDash;
-            StartCoroutine(WaitToResetDash());
+            StartCoroutine(WaitToStopDash());
         }        
     }
 
-    IEnumerator WaitToResetDash()
+    IEnumerator WaitToStopDash()
     {
         canApplyDash = false;
         yield return new WaitForSeconds(dashCooldown);
         myRigidbody.velocity = new Vector3(0, myRigidbody.velocity.y);
         limitVelocity.x = standardLimit;
+        //Extra cooldown
+        StartCoroutine(WaitToResetDash());
+    }
+
+    IEnumerator WaitToResetDash()
+    {
+        yield return new WaitForSeconds(0.5f);        
         canApplyDash = true;
     }
 
