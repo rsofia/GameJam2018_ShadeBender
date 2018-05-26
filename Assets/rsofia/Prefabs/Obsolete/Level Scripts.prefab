@@ -69,6 +69,8 @@ MonoBehaviour:
   player: {fileID: 0}
   txtTimerColor: {fileID: 0}
   txtTimerTotal: {fileID: 0}
+  timeColor: 15
+  totalLevelTime: 0
   isPaused: 0
 --- !u!114 &114907240564130756
 MonoBehaviour:
