@@ -42,8 +42,10 @@ public class UIManager : MonoBehaviour {
     public void OnOptionsClicked()
     {
         OptionsPanel.SetActive(true);
-        MainPanel.GetComponent<FadeIn>().FadeOutUI();
-        OptionsPanel.GetComponent<FadeIn>().FadeInUI();
+        //MainPanel.GetComponent<FadeIn>().FadeOutUI();
+        //OptionsPanel.GetComponent<FadeIn>().FadeInUI();
+        MainPanel.GetComponent<FadeIn>().shouldFadeOut = true;
+        OptionsPanel.GetComponent<FadeIn>().shouldFadeIn = true;
         OptionsMainPanel.SetActive(true);
         optionsLevelMenu = 1;
     }
@@ -96,6 +98,7 @@ public class UIManager : MonoBehaviour {
                 {
                     OptionsPanel.GetComponent<FadeIn>().shouldFadeOut = true;
                     MainPanel.GetComponent<FadeIn>().shouldFadeIn = true;
+
                     break;
                 }
             case 2:

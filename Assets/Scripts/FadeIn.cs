@@ -12,7 +12,7 @@ public class FadeIn : MonoBehaviour {
     public bool shouldFadeOut;
     public float timeToFadeIn;
     public float timeToFadeOut;
-
+    bool isInCoroutine = false;
 	void Start () 
 	{
         //FadeInUI();
@@ -20,17 +20,22 @@ public class FadeIn : MonoBehaviour {
 
     private void Update()
     {
-        if(shouldFadeIn)
+        if(shouldFadeIn && !isInCoroutine)
         {
+            isInCoroutine = true;
+            shouldFadeIn = true;
+            shouldFadeOut = false;
             FadeInUI();
-            shouldFadeIn = false;
         }
 
-        if(shouldFadeOut)
+        if(shouldFadeOut && !isInCoroutine)
         {
+            isInCoroutine = true;
+            shouldFadeOut = true;
+            shouldFadeIn = false;
             FadeOutUI();
-            shouldFadeOut = false;
         }
+        
     }
 
     public void FadeInUI()
@@ -45,21 +50,32 @@ public class FadeIn : MonoBehaviour {
 
     IEnumerator FadeCanvasGroupToFullAlpha(float t, CanvasGroup i)
     {
+  
+
         i.blocksRaycasts = true;
-        while (i.alpha < 1.0f)
+        while (i.alpha < 1.0f && shouldFadeIn)
         {
+            Debug.Log(gameObject.name + "Fade In: " +i.alpha);
             i.alpha = i.alpha + (Time.deltaTime / t);
             yield return new WaitForEndOfFrame();
         }
+        isInCoroutine = false;
+        shouldFadeIn = false;
     }
     IEnumerator FadeCanvasGroupToZeroAlpha(float t, CanvasGroup i)
     {
+
+
         i.blocksRaycasts = false;
-        while (i.alpha > 0.001f)
+        while (i.alpha > 0.0f && shouldFadeOut)
         {
+            Debug.Log(gameObject.name + "Fade Out: " + i.alpha);
             i.alpha = i.alpha - (Time.deltaTime / t);
             yield return new WaitForEndOfFrame();
         }
+        isInCoroutine = false;
+        shouldFadeOut = false;
+
     }
 
     IEnumerator FadeToFullAlpha(float t, Text i)
@@ -68,7 +84,7 @@ public class FadeIn : MonoBehaviour {
         while (i.color.a < 1.0f)
         {
             i.color = new Color(i.color.r, i.color.g, i.color.b, i.color.a + (Time.deltaTime / t));
-            yield return null;
+            yield return new WaitForEndOfFrame();
         }
     }
 }

@@ -69,7 +69,7 @@ public class FadeText : MonoBehaviour {
         while (i.color.a < 1.0f)
         {
             i.color = new Color(i.color.r, i.color.g, i.color.b, i.color.a + (Time.deltaTime / t));
-            yield return null;
+            yield return new WaitForEndOfFrame();
         }
         StartCoroutine(WaitToChange());
     }
@@ -80,7 +80,7 @@ public class FadeText : MonoBehaviour {
         while (i.color.a < 1.0f)
         {
             i.color = new Color(i.color.r, i.color.g, i.color.b, i.color.a + (Time.deltaTime / t));
-            yield return null;
+            yield return new WaitForEndOfFrame();
         }
 
         canStart = true;
@@ -92,7 +92,7 @@ public class FadeText : MonoBehaviour {
         while (i.color.a > 0.0f)
         {
             i.color = new Color(i.color.r, i.color.g, i.color.b, i.color.a - (Time.deltaTime / t));
-            yield return null;
+            yield return new WaitForEndOfFrame();
         }
     }
 }
