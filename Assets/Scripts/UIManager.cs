@@ -24,6 +24,8 @@ public class UIManager : MonoBehaviour {
     [Header("Extras GameObjects")]
     public GameObject ExtrasPanel;
 
+    public GameObject LevelSelectionPanel;
+
     public AudioManager audioMngr;
 
     #region Main Panel Functions
@@ -42,8 +44,6 @@ public class UIManager : MonoBehaviour {
     public void OnOptionsClicked()
     {
         OptionsPanel.SetActive(true);
-        //MainPanel.GetComponent<FadeIn>().FadeOutUI();
-        //OptionsPanel.GetComponent<FadeIn>().FadeInUI();
         MainPanel.GetComponent<FadeIn>().shouldFadeOut = true;
         OptionsPanel.GetComponent<FadeIn>().shouldFadeIn = true;
         OptionsMainPanel.SetActive(true);
@@ -52,7 +52,10 @@ public class UIManager : MonoBehaviour {
 
     public void OnStartGameClicked()
     {
-
+        LevelSelectionPanel.SetActive(true);
+        MainPanel.GetComponent<FadeIn>().shouldFadeOut = true;
+        LevelSelectionPanel.GetComponent<FadeIn>().shouldFadeIn = true;
+        FindObjectOfType<LevelSelectorController>().LoadLevels();
     }
     #endregion
 

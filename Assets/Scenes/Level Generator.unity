@@ -113,6 +113,53 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &468124
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4755972454749424, guid: a619060f16738bf40a1839c266bfac4c, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4755972454749424, guid: a619060f16738bf40a1839c266bfac4c, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4755972454749424, guid: a619060f16738bf40a1839c266bfac4c, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4755972454749424, guid: a619060f16738bf40a1839c266bfac4c, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4755972454749424, guid: a619060f16738bf40a1839c266bfac4c, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4755972454749424, guid: a619060f16738bf40a1839c266bfac4c, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4755972454749424, guid: a619060f16738bf40a1839c266bfac4c, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4755972454749424, guid: a619060f16738bf40a1839c266bfac4c, type: 2}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: a619060f16738bf40a1839c266bfac4c, type: 2}
+  m_IsPrefabParent: 0
+--- !u!1 &1947245454 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1937496098976248, guid: a619060f16738bf40a1839c266bfac4c,
+    type: 2}
+  m_PrefabInternal: {fileID: 468124}
 --- !u!1 &1972141698
 GameObject:
   m_ObjectHideFlags: 0
@@ -237,7 +284,9 @@ MonoBehaviour:
   map: {fileID: 2800000, guid: 1eb64a514eeb9dd4db576bab5aa10dd5, type: 3}
   colorMappings:
   - color: {r: 0, g: 0, b: 0, a: 1}
-    Prefab: {fileID: 1789229385637494, guid: dfea849da4e817c428e70309a0dbc0e3, type: 2}
+    Prefab: {fileID: 1947245454}
+  - color: {r: 1, g: 0, b: 0, a: 1}
+    Prefab: {fileID: 1947245454}
 --- !u!1001 &2054644728
 Prefab:
   m_ObjectHideFlags: 0
