@@ -8,8 +8,8 @@ public class SCR_Player : MonoBehaviour {
 
     [Header("Movement")]
     private Rigidbody myRigidbody;
-    private float speed = 20;
-    private Vector2 limitVelocity = new Vector2(15, 15);
+    private float speed = 35;
+    private Vector2 limitVelocity = new Vector2(10, 15);
 
     [Header("Jump")]
     [Tooltip("La poscicion (centro) de los pies del personaje para checar si tocan el suelo")]
@@ -31,11 +31,19 @@ public class SCR_Player : MonoBehaviour {
     public List<Image> imgHealth = new List<Image>();
     private int healthPoints = 3;
 
+    [Header("Puntaje")]
+    private float score;
+    public Text txtScore;
+    private SCR_Level levelProperties;
+    private SCR_Timer timer;
+
     private void Start()
     {
         myRigidbody = GetComponent<Rigidbody>();
         if (myRenderer == null)
             myRenderer = GetComponent<Renderer>();
+        levelProperties = FindObjectOfType<SCR_Level>();
+        timer = FindObjectOfType<SCR_Timer>();
         AssignRandomColor();
     }
 
@@ -107,12 +115,29 @@ public class SCR_Player : MonoBehaviour {
     #region COLLISION DETECTION
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.tag == "Enemy")
+        switch(collision.gameObject.tag)
         {
-            if(collision.gameObject.GetComponent<SCR_Enemy>() != null)
-            {
-                RestHealth(collision.gameObject.GetComponent<SCR_Enemy>().damage);
-            }
+            case "Enemy":
+                {
+                    if (collision.gameObject.GetComponent<SCR_Enemy>() != null)
+                    {
+                        RestHealth(collision.gameObject.GetComponent<SCR_Enemy>().damage);
+                    }
+                }
+                break;
+            case "Pickup":
+                {
+                    AddScore(collision.gameObject.GetComponent<SCR_Pickup>().points);
+                    Destroy(collision.gameObject);
+                }
+                break;
+            case "Goal":
+                {
+                    GameWon();
+                }
+                break;
+            default:
+                break;
         }
     }
     #endregion
@@ -150,6 +175,28 @@ public class SCR_Player : MonoBehaviour {
     public void GameOver()
     {
         Debug.Log("Game Over");
+        CalculateFinalScore();
+    }
+    public void GameWon()
+    {
+        Debug.Log("Game won");
+        CalculateFinalScore();
+    }
+    #endregion
+
+    #region SCORE
+    public void AddScore(float _score)
+    {
+        score += _score;
+        DisplayScore();
+    }
+    private void DisplayScore()
+    {
+        txtScore.text = score.ToString();
+    }
+    private void CalculateFinalScore()
+    {
+        
     }
     #endregion
 }
