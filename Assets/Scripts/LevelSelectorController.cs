@@ -27,7 +27,8 @@ public class LevelSelectorController : MonoBehaviour, IEnhancedScrollerDelegate
 
         for(int i = 0; i < Levels.Length; i++)
         {
-            _data.Add(new LevelData { LevelImage = Levels[i], LevelNumber = i + 1, time = timeEstimate[i], colorTime = colorEstimate[i], leanTween = leanTweenActivated[i] });
+
+            _data.Add(new LevelData { LevelImage = Levels[i], LevelNumber = i + 1, time = timeEstimate[i], colorTime = colorEstimate[i], leanTween = leanTweenActivated[i]   });
         }
         myScroller.Delegate = this;
         myScroller.ReloadData();

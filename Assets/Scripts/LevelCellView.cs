@@ -33,6 +33,12 @@ public class LevelCellView : EnhancedScrollerCellView {
 
         BTN_SelectLevel.onClick.RemoveAllListeners();
         BTN_SelectLevel.onClick.AddListener(() => OnSelectLevelClicked());
+
+
+        FileWriter writer = FindObjectOfType<FileWriter>();
+
+        bool wasLevelPlayed = writer.IsIndexSaved(lvlData.LevelNumber);
+        BTN_SelectLevel.interactable = !wasLevelPlayed;
     }
 
     public void OnSelectLevelClicked()
@@ -50,6 +56,7 @@ public class LevelCellView : EnhancedScrollerCellView {
         SCR_Level.estimatedTimeInSeconds = tiempoEstimado;
         SCR_Level.tiempoACambiar = tiempoColores;
         SCR_Level.lerpEnemies = isLeanTweenActivated;
+        SCR_Level.index = int.Parse(TXT_LevelNumber.text);
 
         var croppedTexture = new Texture2D((int)IMG_LevelImage.sprite.rect.width, (int)IMG_LevelImage.sprite.rect.height);
         var pixels = IMG_LevelImage.sprite.texture.GetPixels((int)IMG_LevelImage.sprite.textureRect.x,

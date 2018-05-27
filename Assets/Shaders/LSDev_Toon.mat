@@ -22,5 +22,5 @@ Material:
     - _EdgeWidth: 0.004
     - _node_5024: 4.273504
     m_Colors:
-    - _Color: {r: 0.066176474, g: 0.24920598, b: 1, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EdgeColor: {r: 1, g: 1, b: 1, a: 1}
