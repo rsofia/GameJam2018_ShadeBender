@@ -95,6 +95,8 @@ public class UIManager : MonoBehaviour {
     #region Options Main Panel
     public void OnAudioClicked()
     {
+        firstSelectionInnerOptions.Select();
+
         OptionsMainPanel.SetActive(false);
         AudioOptionsPanel.SetActive(true);
         OptionsTitle.text = "Audio";
@@ -103,6 +105,8 @@ public class UIManager : MonoBehaviour {
 
     public void OnVideoClicked()
     {
+        firstSelectionInnerOptions.Select();
+
         OptionsMainPanel.SetActive(false);
         VideoOptionsPanel.SetActive(true);
         OptionsTitle.text = "Video";
@@ -111,6 +115,8 @@ public class UIManager : MonoBehaviour {
 
     public void OnGameOptionsClicked()
     {
+        firstSelectionInnerOptions.Select();
+
         OptionsMainPanel.SetActive(false);
         GameOptionsPanel.SetActive(true);
         OptionsTitle.text = "Game Options";
@@ -119,6 +125,8 @@ public class UIManager : MonoBehaviour {
 
     public void OnControllerClicked()
     {
+        firstSelectionInnerOptions.Select();
+
         OptionsMainPanel.SetActive(false);
         ControllerOptionsPanel.SetActive(true);
         OptionsTitle.text = "Controller";
@@ -219,7 +227,14 @@ public class UIManager : MonoBehaviour {
         else
         {
             colorAngel.color = Color.white;
+            sldrRAngel.value = 1;
+            sldrGAngel.value = 1;
+            sldrBAngel.value = 1;
+
             colorDemon.color = Color.black;
+            sldrRDemon.value = 0;
+            sldrGDemon.value = 0;
+            sldrBDemon.value = 0;
         }
 
 
