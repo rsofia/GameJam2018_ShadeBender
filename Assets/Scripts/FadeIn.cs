@@ -60,10 +60,16 @@ public class FadeIn : MonoBehaviour {
         }
         isInCoroutine = false;
         shouldFadeIn = false;
+        if(transform.GetComponentInChildren<Button>())
+        {
+            yield return new WaitForEndOfFrame();
+
+            transform.GetComponentInChildren<Button>().Select();
+        }
     }
     IEnumerator FadeCanvasGroupToZeroAlpha(float t, CanvasGroup i)
     {
-
+        
         i.blocksRaycasts = false;
         while (i.alpha > 0.0f && shouldFadeOut)
         {
@@ -75,6 +81,11 @@ public class FadeIn : MonoBehaviour {
         isInCoroutine = false;
         shouldFadeOut = false;
         gameObject.SetActive(false);
+        if (transform.GetComponentInChildren<Button>())
+        {
+            yield return new WaitForEndOfFrame();
+            transform.GetComponentInChildren<Button>().Select();
+        }
     }
 
     IEnumerator FadeToFullAlpha(float t, Text i)

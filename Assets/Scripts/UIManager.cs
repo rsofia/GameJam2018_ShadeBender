@@ -252,12 +252,14 @@ public class UIManager : MonoBehaviour {
     }
     public void OnConfirmClickedCustom()
     {
+        firstSelectionExtras.Select();
         SCR_CustomizationColor.SetColors(colorDemon.color,colorAngel.color);
         mainExtraPanel.SetActive(true);
         customizationPanel.SetActive(false);
     }
     public void OnRestoreDefaultClicked()
     {
+        firstSelectionExtras.Select();
         colorDemon.color = Color.black;
         colorAngel.color = Color.white;
         SCR_CustomizationColor.SetColors(colorDemon.color, colorAngel.color);
