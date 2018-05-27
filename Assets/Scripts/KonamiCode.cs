@@ -46,6 +46,11 @@ public class KonamiCode : MonoBehaviour {
 
     void Update()
     {
+        if (Input.GetKey(KeyCode.JoystickButton0))
+            if (Input.GetKey(KeyCode.JoystickButton3))
+                if (Input.GetKeyDown(KeyCode.JoystickButton2))
+                    UnityEngine.SceneManagement.SceneManager.LoadScene("Intro");
+
         this.timeSinceLastKey += Time.deltaTime;
         this.timeSinceStartCode += Time.deltaTime;
 

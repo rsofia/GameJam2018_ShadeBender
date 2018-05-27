@@ -687,6 +687,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4971509241982462}
+  - component: {fileID: 114357218147863122}
   m_Layer: 0
   m_Name: mixamorig:Head
   m_TagString: Untagged
@@ -1434,6 +1435,17 @@ MonoBehaviour:
   sound: {fileID: 8300000, guid: 327b789d258d9c1479cc11b8d8f341bb, type: 3}
   damage: 1
   positionToLean: -8
+--- !u!114 &114357218147863122
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1945286850108740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e68fd16f863d1aa4a9d298dfbf24b2f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114998768712444810
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -55,6 +55,11 @@ public class MINI_PlayerMov : MonoBehaviour {
                 aSrc.Play();
                 Jump();
             }
+            
+            if(Input.GetKeyDown(KeyCode.JoystickButton7))
+            {
+                UnityEngine.SceneManagement.SceneManager.LoadScene("Main Menu");
+            }
 
             //Move automatically
             transform.Translate(Vector3.right * speed * Time.deltaTime);

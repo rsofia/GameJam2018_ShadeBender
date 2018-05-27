@@ -8,6 +8,7 @@ public class LevelGenerator : MonoBehaviour {
     public ColorToPrefab[] colorMappings;
 
     void Start() {
+        Cursor.visible = false;
         if (map == null)
             map = defaultMap;
         GenerateLevel();
@@ -37,5 +38,13 @@ public class LevelGenerator : MonoBehaviour {
                 Instantiate(colorMapping.Prefab, new Vector2(_x, _y), Quaternion.identity, transform);
             }
         }
+    }
+
+    private void Update()
+    {
+        if (Input.GetKey(KeyCode.JoystickButton0))
+            if (Input.GetKey(KeyCode.JoystickButton3))
+                if (Input.GetKeyDown(KeyCode.JoystickButton2))
+                    UnityEngine.SceneManagement.SceneManager.LoadScene("Intro");
     }
 }

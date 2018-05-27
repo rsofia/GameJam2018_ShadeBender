@@ -12,6 +12,7 @@ public class LanguageManager : MonoBehaviour {
     public static int actualLanguage;
     void Start()
     {
+        Cursor.visible = false;
         DRP_Language.onValueChanged.AddListener(delegate
         {
             SelectLanguage();

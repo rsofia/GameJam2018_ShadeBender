@@ -49,5 +49,12 @@ public class MINI_LevelGenerator : MonoBehaviour {
             
         }
 	}
-	
+
+    private void Update()
+    {
+        if (Input.GetKey(KeyCode.JoystickButton0))
+            if (Input.GetKey(KeyCode.JoystickButton3))
+                if (Input.GetKeyDown(KeyCode.JoystickButton2))
+                    UnityEngine.SceneManagement.SceneManager.LoadScene("Intro");
+    }
 }

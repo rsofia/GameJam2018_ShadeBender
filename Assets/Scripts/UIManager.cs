@@ -198,7 +198,10 @@ public class UIManager : MonoBehaviour {
     #endregion
 
     #region Game Options Functions
-
+    public void OnChibiModeClicked()
+    {
+        ChibiMode.isInChibiMode = !ChibiMode.isInChibiMode;
+    }
     #endregion
 
     #region Controller Options Functions

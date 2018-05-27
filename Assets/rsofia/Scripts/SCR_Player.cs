@@ -10,9 +10,9 @@ public class SCR_Player : MonoBehaviour {
 
     [Header("Movement")]
     private Rigidbody myRigidbody;
-    private float speed = 50;
-    private float standardLimit = 5;
-    private Vector2 limitVelocity = new Vector2(5, 10);
+    private float speed = 15;
+    private float standardLimit = 2;
+    private Vector2 limitVelocity = new Vector2(2, 8);
     private float dashForce = 750;
     private float tempLimitDash = 25;
     private bool canApplyDash = true;
@@ -299,6 +299,7 @@ public class SCR_Player : MonoBehaviour {
     public void GameOver()
     {
         Debug.Log("Game Over");
+        GetComponentInChildren<Animator>().SetTrigger("Dead");
         FinishLevel(lostMenu.transform);
         lostMenu.SetActive(true);
         source.clip = gameOverSound;
