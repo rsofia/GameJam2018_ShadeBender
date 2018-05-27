@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class SCR_Level : MonoBehaviour {
 
-    public float estimatedTimeInSeconds = 30;
-    public float tiempoACambiar = 7;
-    public bool lerpEnemies = true;
+    public static float estimatedTimeInSeconds = 30;
+    public static float tiempoACambiar = 7;
+    public static bool lerpEnemies = true;
 
     private void Start()
     {

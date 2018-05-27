@@ -28,7 +28,7 @@ public class SCR_Pause : MonoBehaviour {
         FindObjectOfType<SCR_InputManager>().isPaused = false;
         FindObjectOfType<SCR_Player>().isPaused = false;
         pauseMenu.SetActive(false);
-        if(FindObjectOfType<SCR_Level>().lerpEnemies)
+        if(SCR_Level.lerpEnemies)
             LeanTween.resumeAll();
     }
 

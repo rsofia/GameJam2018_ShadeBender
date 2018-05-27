@@ -13,10 +13,23 @@ public class LevelCellView : EnhancedScrollerCellView {
     public Image IMG_LevelImage;
     public Text TXT_LevelNumber;
 
+    float tiempoEstimado;
+    float tiempoColores;
+    bool isLeanTweenActivated;
+
+    //Imagen
+    //SCR_Level
+    //      - Tiempo de nivel estimado
+    //      - Tiempo de cambio de colores
+    //      - Lean Tween is Activated
     public void SetData(LevelData lvlData)
     {
         IMG_LevelImage.sprite = lvlData.LevelImage;
         TXT_LevelNumber.text = lvlData.LevelNumber + "";
+
+        tiempoEstimado = lvlData.time;
+        tiempoColores = lvlData.colorTime;
+        isLeanTweenActivated = lvlData.leanTween;
 
         BTN_SelectLevel.onClick.RemoveAllListeners();
         BTN_SelectLevel.onClick.AddListener(() => OnSelectLevelClicked());
@@ -33,6 +46,10 @@ public class LevelCellView : EnhancedScrollerCellView {
         {
             SCR_CustomizationColor.GetAllColors();
         }
+
+        SCR_Level.estimatedTimeInSeconds = tiempoEstimado;
+        SCR_Level.tiempoACambiar = tiempoColores;
+        SCR_Level.lerpEnemies = isLeanTweenActivated;
     }
 
 }

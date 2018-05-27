@@ -15,6 +15,9 @@ public class LevelSelectorController : MonoBehaviour, IEnhancedScrollerDelegate
     public LevelCellView levelCellViewPrefab;
 
     public Sprite[] Levels;
+    public float[] timeEstimate;
+    public float[] colorEstimate;
+    public bool[] leanTweenActivated;
 
     public void LoadLevels()
     {
@@ -24,16 +27,11 @@ public class LevelSelectorController : MonoBehaviour, IEnhancedScrollerDelegate
 
         for(int i = 0; i < Levels.Length; i++)
         {
-            _data.Add(new LevelData { LevelImage = Levels[i], LevelNumber = i + 1 });
+            _data.Add(new LevelData { LevelImage = Levels[i], LevelNumber = i + 1, time = timeEstimate[i], colorTime = colorEstimate[i], leanTween = leanTweenActivated[i] });
         }
         myScroller.Delegate = this;
         myScroller.ReloadData();
     }
-
-    void Update () 
-	{
-		
-	}
 
     public int GetNumberOfCells(EnhancedScroller scroller)
     {

@@ -7,4 +7,7 @@ public class LevelData : MonoBehaviour{
 
     public int LevelNumber;
     public Sprite LevelImage;
+    public float time;
+    public float colorTime;
+    public bool leanTween;
 }

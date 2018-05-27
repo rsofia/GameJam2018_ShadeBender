@@ -328,11 +328,11 @@ public class SCR_Player : MonoBehaviour {
         string result = "";
         float extraScore = 0;
 
-        if (timer.totalLevelTime <= levelProperties.estimatedTimeInSeconds / 3)
+        if (timer.totalLevelTime <= SCR_Level.estimatedTimeInSeconds / 3)
             extraScore += (100/ timer.totalLevelTime) * 100;
-        else if (timer.totalLevelTime <= levelProperties.estimatedTimeInSeconds / 2)
+        else if (timer.totalLevelTime <= SCR_Level.estimatedTimeInSeconds / 2)
             extraScore += (50 / timer.totalLevelTime) * 100;
-        else if (timer.totalLevelTime <= levelProperties.estimatedTimeInSeconds)
+        else if (timer.totalLevelTime <= SCR_Level.estimatedTimeInSeconds)
             extraScore += (25 / timer.totalLevelTime) * 100;
         extraScore = Mathf.RoundToInt(extraScore);
         result = (score + extraScore).ToString();
