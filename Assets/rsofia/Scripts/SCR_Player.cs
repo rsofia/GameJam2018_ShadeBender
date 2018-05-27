@@ -37,6 +37,7 @@ public class SCR_Player : MonoBehaviour {
     [Header("Health")]
     public List<Image> imgHealth = new List<Image>();
     private int healthPoints = 3;
+    private bool canBeDamaged = true;
 
     [Header("Puntaje")]
     private float score;
@@ -76,8 +77,11 @@ public class SCR_Player : MonoBehaviour {
         myRigidbody.AddForce(Vector3.right * _direction * speed);
         LimitVelocity();
 
-        if(_direction != 0)
+        if (_direction != 0)
+        {
             playerMesh.transform.rotation = Quaternion.LookRotation(Vector3.right * _direction);
+            playerMesh.transform.localPosition = Vector3.zero;
+        }
     }
 
     public void Dash()
@@ -180,10 +184,11 @@ public class SCR_Player : MonoBehaviour {
             {
                 case "Enemy":
                     {
-                        if (collision.gameObject.GetComponent<SCR_Enemy>() != null)
+                        if (collision.gameObject.GetComponent<SCR_Enemy>() != null && canBeDamaged)
                         {
                             collision.gameObject.GetComponent<SCR_Enemy>().PlaySound();
                             RestHealth(collision.gameObject.GetComponent<SCR_Enemy>().damage);
+                            StartCoroutine(WaitToDamageAgain());
                         }
                     }
                     break;
@@ -232,14 +237,27 @@ public class SCR_Player : MonoBehaviour {
         {
             case "Hazard":
                 {
-                    other.GetComponent<SCR_EmitSound>().PlaySound();
-                    RestHealth(1);
+                    if(canBeDamaged)
+                    {
+                        other.GetComponent<SCR_EmitSound>().PlaySound();
+                        RestHealth(1);
+                        StartCoroutine(WaitToDamageAgain());
+                    }
+                    
                 }
                 break;
             default:
                 break;
         }
     }
+
+    IEnumerator WaitToDamageAgain()
+    {
+        canBeDamaged = false;
+        yield return new WaitForSeconds(0.45f);
+        canBeDamaged = true;
+    }
+
     #endregion
 
     #region HEALTH

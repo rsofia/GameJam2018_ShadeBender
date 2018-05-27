@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4162430616713616}
   - component: {fileID: 114459926430337514}
+  - component: {fileID: 114148690776807982}
   m_Layer: 0
   m_Name: Level Generator
   m_TagString: Untagged
@@ -40,6 +41,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114148690776807982
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1350803117943732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 374650169d0c77443af8a8f1a8a0880e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  estimatedTimeInSeconds: 10
 --- !u!114 &114459926430337514
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -51,23 +64,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 455ce4e47acf8f74ba63ac02e9f7bd00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultMap: {fileID: 2800000, guid: 0f9f3cb1cd4352c468754deb396e9107, type: 3}
+  defaultMap: {fileID: 2800000, guid: ec0de147dad83aa49b766c4dd2576a43, type: 3}
   colorMappings:
   - color: {r: 0, g: 1, b: 0, a: 1}
     Prefab: {fileID: 1464743379582314, guid: 9db29671f64a54c47ad230b58e93d041, type: 2}
   - color: {r: 1, g: 1, b: 1, a: 1}
     Prefab: {fileID: 1510486108433168, guid: caf6d9e170e97c846a91e282ced3fd85, type: 2}
-  - color: {r: 0, g: 0, b: 0, a: 1}
-    Prefab: {fileID: 1185422149735148, guid: 5977b6ee72c385d4a90c0e88e5c646e2, type: 2}
   - color: {r: 1, g: 0, b: 0, a: 1}
-    Prefab: {fileID: 1365459521331374, guid: 7487797c5f8b0a044a771be07ae554f5, type: 2}
+    Prefab: {fileID: 1185422149735148, guid: 5977b6ee72c385d4a90c0e88e5c646e2, type: 2}
   - color: {r: 1, g: 1, b: 0, a: 1}
-    Prefab: {fileID: 1750943617535928, guid: 32a887ced50565a4f986194f399ecdaf, type: 2}
+    Prefab: {fileID: 1365459521331374, guid: 7487797c5f8b0a044a771be07ae554f5, type: 2}
   - color: {r: 0, g: 1, b: 1, a: 1}
-    Prefab: {fileID: 1224628362678728, guid: e011b337b2aa0ee49a6c34459501c827, type: 2}
-  - color: {r: 1, g: 0, b: 1, a: 1}
-    Prefab: {fileID: 1434033593795434, guid: 593d5d919a890f8429eba90a3db37df4, type: 2}
+    Prefab: {fileID: 1755143639083512, guid: 36847e92c34836e498884c222acf091a, type: 2}
   - color: {r: 0, g: 0, b: 1, a: 1}
-    Prefab: {fileID: 1142148581426594, guid: 3b8fc41384632a1489a013936a60a0a6, type: 2}
-  - color: {r: 1, g: 0.49019608, b: 0, a: 1}
+    Prefab: {fileID: 1219709068710746, guid: 3b8fc41384632a1489a013936a60a0a6, type: 2}
+  - color: {r: 0, g: 0, b: 0, a: 1}
     Prefab: {fileID: 1998780145457732, guid: 5b3127ae9b047e74e8c00f3b0ee62d1e, type: 2}

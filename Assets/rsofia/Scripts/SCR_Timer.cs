@@ -24,6 +24,7 @@ public class SCR_Timer : MonoBehaviour {
     {
         if (player == null)
             player = FindObjectOfType<SCR_Player>();
+        timeColor = FindObjectOfType<SCR_Level>().tiempoACambiar;
     }
 
     private void Update()
@@ -34,7 +35,7 @@ public class SCR_Timer : MonoBehaviour {
             totalLevelTime += Time.deltaTime;
             if (timeColor <= 0.0f)
             {
-                timeColor = 15;
+                timeColor = FindObjectOfType<SCR_Level>().tiempoACambiar;
                 player.InvertColor();
             }
             txtTimerColor.text = (timeColor / 60).ToString("00") + ":" + (timeColor % 60).ToString("00");

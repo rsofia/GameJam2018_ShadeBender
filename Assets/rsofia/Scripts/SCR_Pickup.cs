@@ -5,9 +5,32 @@ using UnityEngine;
 
 public class SCR_Pickup : SCR_EmitSound {
 
-    public float points = 10;
+    [HideInInspector]
+    public float points = 0;
+    public GameObject[] pickUpType;
+    public float[] pickupPoints;
+
+
+    [HideInInspector]
     public bool isAlive = true;
-    
+
+    private void Start()
+    {
+        int rand = Random.Range(0, pickUpType.Length);
+        for(int i = 0; i < pickUpType.Length; i++)
+        {
+            if(i != rand)
+            {
+                pickUpType[i].SetActive(false);
+            }
+            else
+            {
+                pickUpType[i].SetActive(true);
+                points = pickupPoints[i];
+            }
+        }
+
+    }
 
     public void Pick()
     {
