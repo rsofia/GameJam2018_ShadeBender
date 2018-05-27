@@ -9,9 +9,13 @@ public class FileWriter : MonoBehaviour {
 
     public void WriteFile(int index)
     {
-        
+
         if (!File.Exists(Application.dataPath + "/Levels.txt"))
-            File.Create(Application.dataPath + "/Levels.txt");
+        {
+            var myFile = File.Create(Application.dataPath + "/Levels.txt"); 
+            myFile.Close();
+        }
+
 
         if(!IsIndexSaved(index))
         {
