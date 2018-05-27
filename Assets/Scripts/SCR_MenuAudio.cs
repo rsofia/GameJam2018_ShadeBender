@@ -8,9 +8,19 @@ public class SCR_MenuAudio : MonoBehaviour {
     public AudioClip[] songs;
 	// Use this for initialization
 	void Start () {
-        mySongPlayer.Pause();
-        mySongPlayer.clip = songs[0];
-        mySongPlayer.Play();
+        if(LanguageManager.actualLanguage==2)
+        {
+            mySongPlayer.Pause();
+            mySongPlayer.clip = songs[1];
+            mySongPlayer.Play();
+        }
+        else
+        {
+            mySongPlayer.Pause();
+            mySongPlayer.clip = songs[0];
+            mySongPlayer.Play();
+        }
+        
 	}
 	
     public void SwitchAudio(int _song)

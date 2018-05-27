@@ -12,12 +12,13 @@ public class MINI_PlayerMov : MonoBehaviour {
 
     public GameObject gameOverMenu;
     public GameObject gameWonMenu;
-
+    public GameObject child;
     [Header("Jump")]
     [Tooltip("La poscicion (centro) de los pies del personaje para checar si tocan el suelo")]
     public Transform piesPersonaje;
     private string floorTag = "Floor";
     private bool isGrounded = false;
+    bool isRooted=false;
     private float jumpForce = 450;
     private float distanceToJump = 1;
     private float limitVelocity = 10;
@@ -35,6 +36,17 @@ public class MINI_PlayerMov : MonoBehaviour {
 
         if (isAlive)
         {
+            child.transform.localPosition = Vector3.zero;
+            if (Physics.Raycast(piesPersonaje.position, Vector3.down, out hit, distanceToJump))
+            {
+                isRooted = hit.collider.tag == floorTag;
+                anim.SetBool("isRooted",false);
+            }
+            else
+            {
+                anim.SetBool("isRooted", true);
+
+            }
             if (Input.GetKeyDown(KeyCode.JoystickButton0) || Input.GetKeyDown(KeyCode.Space))
             {
                 anim.SetBool("Jump", true);
@@ -75,7 +87,6 @@ public class MINI_PlayerMov : MonoBehaviour {
         {
             isGrounded = hit.collider.tag == floorTag;
         }
-        anim.SetBool("isRooted", isGrounded);
 
         return isGrounded;
     }
