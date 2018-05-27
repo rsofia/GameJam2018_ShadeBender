@@ -50,6 +50,9 @@ public class LevelCellView : EnhancedScrollerCellView {
         SCR_Level.estimatedTimeInSeconds = tiempoEstimado;
         SCR_Level.tiempoACambiar = tiempoColores;
         SCR_Level.lerpEnemies = isLeanTweenActivated;
+
+        //LevelGenerator.map = IMG_LevelImage;
+        UnityEngine.SceneManagement.SceneManager.LoadScene("SCN_Nivel_0");
     }
 
 }

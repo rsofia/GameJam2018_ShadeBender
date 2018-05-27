@@ -12,7 +12,7 @@ public class SCR_Enemy : SCR_EmitSound {
     private void Start()
     {
         positionToLean = transform.position.x + 2;
-        if(FindObjectOfType<SCR_Level>().lerpEnemies)
+        if(SCR_Level.lerpEnemies)
             LeanTween.moveX(gameObject, positionToLean, timeToLean).setLoopPingPong();
     }
 }
