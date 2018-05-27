@@ -55,7 +55,6 @@ public class FadeIn : MonoBehaviour {
         {
             //shouldFadeIn = true;
             //shouldFadeOut = false;
-            Debug.Log(gameObject.name + "Fade In: " +i.alpha);
             i.alpha = i.alpha + (Time.deltaTime / t);
             yield return new WaitForEndOfFrame();
         }
@@ -70,13 +69,12 @@ public class FadeIn : MonoBehaviour {
         {
             //shouldFadeOut = true;
             //shouldFadeIn = false;
-            Debug.Log(gameObject.name + "Fade Out: " + i.alpha);
             i.alpha = i.alpha - (Time.deltaTime / t);
             yield return new WaitForEndOfFrame();
         }
         isInCoroutine = false;
         shouldFadeOut = false;
-
+        gameObject.SetActive(false);
     }
 
     IEnumerator FadeToFullAlpha(float t, Text i)

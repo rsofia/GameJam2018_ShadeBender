@@ -9,9 +9,16 @@ using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour {
 
+    [Header("Main GameObjects")]
     public GameObject MainPanel;
+    public Button firstSelectionMain;
+
 
     [Header("Options GameObjects")]
+    public Button firstSelectionOptions;
+    public Button firstSelectionInnerOptions;
+
+
     public GameObject OptionsPanel;
     public GameObject OptionsMainPanel;
     public GameObject AudioOptionsPanel;
@@ -22,15 +29,23 @@ public class UIManager : MonoBehaviour {
     public static int optionsLevelMenu = 0;
 
     [Header("Extras GameObjects")]
+    public Button firstSelectionExtras;
     public GameObject ExtrasPanel;
     public GameObject mainExtraPanel;
     public GameObject LevelSelectionPanel;
 
     public AudioManager audioMngr;
-    [Header("Extras GameObjects")]
+    [Header("Customization GameObjects")]
+    public Button firstSelectionCustom;
     public GameObject customizationPanel;
     public Image colorDemon;
     public Image colorAngel;
+    public Slider sldrRDemon;
+    public Slider sldrGDemon;
+    public Slider sldrBDemon;
+    public Slider sldrRAngel;
+    public Slider sldrBAngel;
+    public Slider sldrGAngel;
 
 
 
@@ -42,7 +57,10 @@ public class UIManager : MonoBehaviour {
 
     public void OnExtrasClicked()
     {
+        firstSelectionExtras.Select();
+
         ExtrasPanel.SetActive(true);
+
         ExtrasPanel.GetComponent<FadeIn>().shouldFadeOut = false;
         ExtrasPanel.GetComponent<FadeIn>().shouldFadeIn = true;
         MainPanel.GetComponent<FadeIn>().shouldFadeIn = false;
@@ -51,7 +69,9 @@ public class UIManager : MonoBehaviour {
 
     public void OnOptionsClicked()
     {
+        firstSelectionOptions.Select();
         OptionsPanel.SetActive(true);
+
         OptionsPanel.GetComponent<FadeIn>().shouldFadeOut = false;
         OptionsPanel.GetComponent<FadeIn>().shouldFadeIn = true;
         MainPanel.GetComponent<FadeIn>().shouldFadeIn = false;
@@ -63,7 +83,9 @@ public class UIManager : MonoBehaviour {
 
     public void OnStartGameClicked()
     {
+
         LevelSelectionPanel.SetActive(true);
+
         MainPanel.GetComponent<FadeIn>().shouldFadeOut = true;
         LevelSelectionPanel.GetComponent<FadeIn>().shouldFadeIn = true;
         FindObjectOfType<LevelSelectorController>().LoadLevels();
@@ -110,6 +132,9 @@ public class UIManager : MonoBehaviour {
         {
             case 1:
                 {
+                    firstSelectionMain.Select();
+                    MainPanel.SetActive(true);
+
                     OptionsPanel.GetComponent<FadeIn>().shouldFadeOut = true;
                     OptionsPanel.GetComponent<FadeIn>().shouldFadeIn = false;
                     MainPanel.GetComponent<FadeIn>().shouldFadeIn = true;
@@ -119,6 +144,8 @@ public class UIManager : MonoBehaviour {
                 }
             case 2:
                 {
+                    firstSelectionInnerOptions.Select();
+
                     OptionsTitle.text = "Options";
                     OptionsMainPanel.SetActive(true);
                     AudioOptionsPanel.SetActive(false);
@@ -164,6 +191,8 @@ public class UIManager : MonoBehaviour {
 
     public void OnExtraBackClicked()
     {
+        firstSelectionMain.Select();
+
         MainPanel.GetComponent<FadeIn>().shouldFadeIn = true;
         MainPanel.GetComponent<FadeIn>().shouldFadeOut = false;
         ExtrasPanel.GetComponent<FadeIn>().shouldFadeOut = true;
@@ -173,10 +202,19 @@ public class UIManager : MonoBehaviour {
     {
         mainExtraPanel.SetActive(false);
         customizationPanel.SetActive(true);
-        if(PlayerPrefs.HasKey(""))
+        if(PlayerPrefs.HasKey("rAngel"))
         {
             colorAngel.color = SCR_CustomizationColor.colorAngel;
+            sldrRAngel.value = colorAngel.color.r;
+            sldrGAngel.value = colorAngel.color.g;
+            sldrBAngel.value = colorAngel.color.b;
+
+
             colorDemon.color = SCR_CustomizationColor.colorDemon;
+            sldrRDemon.value = colorDemon.color.r;
+            sldrGDemon.value = colorDemon.color.g;
+            sldrBDemon.value = colorDemon.color.b;
+
         }
         else
         {
@@ -191,6 +229,7 @@ public class UIManager : MonoBehaviour {
     #region Customization Functions
     public void OnBackClickedCustom()
     {
+        firstSelectionExtras.Select();
         mainExtraPanel.SetActive(true);
         customizationPanel.SetActive(false);
     }
@@ -208,10 +247,35 @@ public class UIManager : MonoBehaviour {
         mainExtraPanel.SetActive(true);
         customizationPanel.SetActive(false);
     }
-    public void UpdateColor(int _selection)
+    public void UpdateRedAngel()
     {
+        colorAngel.color = new Color(sldrRAngel.value,sldrGAngel.value, sldrBAngel.value);
+        
+    }
+    public void UpdateGreenAngel()
+    {
+        colorAngel.color = new Color(sldrRAngel.value, sldrGAngel.value, sldrBAngel.value);
 
     }
+    public void UpdateBlueAngel()
+    {
+        colorAngel.color = new Color(sldrRAngel.value, sldrGAngel.value, sldrBAngel.value);
 
+    }
+    public void UpdateGreenDemon()
+    {
+        colorDemon.color = new Color(sldrRDemon.value, sldrGDemon.value, sldrBDemon.value);
+
+    }
+    public void UpdateBlueDemon()
+    {
+        colorDemon.color = new Color(sldrRDemon.value, sldrGDemon.value, sldrBDemon.value);
+
+    }
+    public void UpdateRedDemon()
+    {
+        colorDemon.color = new Color(sldrRDemon.value, sldrGDemon.value, sldrBDemon.value);
+
+    }
     #endregion
 }
