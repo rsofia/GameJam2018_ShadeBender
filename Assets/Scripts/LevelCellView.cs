@@ -25,6 +25,14 @@ public class LevelCellView : EnhancedScrollerCellView {
     public void OnSelectLevelClicked()
     {
         Debug.Log("LEVEL SELECTED: " + TXT_LevelNumber.text);
+        if(!PlayerPrefs.HasKey("rAngel"))
+        {
+            SCR_CustomizationColor.SetColors(Color.black, Color.white);
+        }
+        else
+        {
+            SCR_CustomizationColor.GetAllColors();
+        }
     }
 
 }

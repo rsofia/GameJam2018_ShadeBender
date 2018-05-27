@@ -200,7 +200,7 @@ public class UIManager : MonoBehaviour {
     public void OnExtraBackClicked()
     {
         firstSelectionMain.Select();
-        MainPanel.SetActive(false);
+        MainPanel.SetActive(true);
 
         MainPanel.GetComponent<FadeIn>().shouldFadeIn = true;
         MainPanel.GetComponent<FadeIn>().shouldFadeOut = false;
