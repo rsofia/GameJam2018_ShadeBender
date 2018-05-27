@@ -62,6 +62,7 @@ public class MINI_PlayerMov : MonoBehaviour {
         if (CanPlayerJump())
         {
             anim.SetTrigger("Jump");
+            anim.SetBool("isRooted", false);
             myRigidbody.AddForce(new Vector3(0, jumpForce));
         }
     }
@@ -74,6 +75,8 @@ public class MINI_PlayerMov : MonoBehaviour {
         {
             isGrounded = hit.collider.tag == floorTag;
         }
+        anim.SetBool("isRooted", isGrounded);
+
         return isGrounded;
     }
 
