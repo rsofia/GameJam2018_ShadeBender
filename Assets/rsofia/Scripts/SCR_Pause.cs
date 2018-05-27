@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class SCR_Pause : MonoBehaviour {
 
@@ -17,8 +18,12 @@ public class SCR_Pause : MonoBehaviour {
         FindObjectOfType<SCR_Timer>().isPaused = true;
         FindObjectOfType<SCR_InputManager>().isPaused = true;
         FindObjectOfType<SCR_Player>().isPaused = true;
-        if(_showPause)
+        if (_showPause)
+        {
             pauseMenu.SetActive(true);
+            pauseMenu.GetComponentInChildren<Button>().Select();
+            Debug.Log("Button selecte!");
+        }
         LeanTween.pauseAll();
     }
 

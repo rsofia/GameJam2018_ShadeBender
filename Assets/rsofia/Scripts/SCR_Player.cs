@@ -74,6 +74,8 @@ public class SCR_Player : MonoBehaviour {
     #region MOVEMENT
     public void Move(float _direction)
     {
+        if (myRigidbody == null)
+            myRigidbody = GetComponent<Rigidbody>();
         myRigidbody.AddForce(Vector3.right * _direction * speed);
         LimitVelocity();
 
