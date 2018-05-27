@@ -51,7 +51,15 @@ public class LevelCellView : EnhancedScrollerCellView {
         SCR_Level.tiempoACambiar = tiempoColores;
         SCR_Level.lerpEnemies = isLeanTweenActivated;
 
-        //LevelGenerator.map = IMG_LevelImage;
+        var croppedTexture = new Texture2D((int)IMG_LevelImage.sprite.rect.width, (int)IMG_LevelImage.sprite.rect.height);
+        var pixels = IMG_LevelImage.sprite.texture.GetPixels((int)IMG_LevelImage.sprite.textureRect.x,
+                                                (int)IMG_LevelImage.sprite.textureRect.y,
+                                                (int)IMG_LevelImage.sprite.textureRect.width,
+                                                (int)IMG_LevelImage.sprite.textureRect.height);
+        croppedTexture.SetPixels(pixels);
+        croppedTexture.Apply();
+
+        LevelGenerator.map = croppedTexture;
         UnityEngine.SceneManagement.SceneManager.LoadScene("SCN_Nivel_0");
     }
 

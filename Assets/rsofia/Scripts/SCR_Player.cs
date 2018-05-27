@@ -156,7 +156,11 @@ public class SCR_Player : MonoBehaviour {
         Physics.IgnoreLayerCollision(0, (int)Mathf.Log(maskToInteract.value, 2), false);
 
         isWhite = _col;
-        myRenderer.material = isWhite ? matWhite : matBlack;
+        if (isWhite)
+            myRenderer.material.SetColor("_Color", SCR_CustomizationColor.colorAngel);
+        else
+            myRenderer.material.SetColor("_Color", SCR_CustomizationColor.colorDemon);
+
         if (isWhite)
             maskToInteract = LayerMask.GetMask("Angel");
         else
