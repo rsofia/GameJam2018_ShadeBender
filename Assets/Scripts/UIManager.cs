@@ -211,7 +211,8 @@ public class UIManager : MonoBehaviour {
     {
         mainExtraPanel.SetActive(false);
         customizationPanel.SetActive(true);
-        if(PlayerPrefs.HasKey("rAngel"))
+        firstSelectionCustom.Select();
+        if (PlayerPrefs.HasKey("rAngel"))
         {
             colorAngel.color = SCR_CustomizationColor.colorAngel;
             sldrRAngel.value = colorAngel.color.r;
