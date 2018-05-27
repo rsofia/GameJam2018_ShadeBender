@@ -140,6 +140,7 @@ public class MINI_PlayerMov : MonoBehaviour {
     {
         yield return new WaitForSeconds(2);
         _easterEgg.Find("Canvas").gameObject.SetActive(true);
+        _easterEgg.Find("Canvas").gameObject.GetComponentInChildren<Button>().Select();
 
     }
 }
