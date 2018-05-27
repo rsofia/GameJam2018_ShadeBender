@@ -85,10 +85,23 @@ public class UIManager : MonoBehaviour {
     {
 
         LevelSelectionPanel.SetActive(true);
+        LevelSelectionPanel.GetComponentInChildren<Button>().Select();
 
-        MainPanel.GetComponent<FadeIn>().shouldFadeOut = true;
+        LevelSelectionPanel.GetComponent<FadeIn>().shouldFadeOut = false;
         LevelSelectionPanel.GetComponent<FadeIn>().shouldFadeIn = true;
+        MainPanel.GetComponent<FadeIn>().shouldFadeIn = false;
+        MainPanel.GetComponent<FadeIn>().shouldFadeOut = true;
+        
         FindObjectOfType<LevelSelectorController>().LoadLevels();
+    }
+    public void OnBackClickedLevel()
+    {
+        MainPanel.SetActive(true);
+
+        LevelSelectionPanel.GetComponent<FadeIn>().shouldFadeOut = true;
+        LevelSelectionPanel.GetComponent<FadeIn>().shouldFadeIn = false;
+        MainPanel.GetComponent<FadeIn>().shouldFadeIn = true;
+        MainPanel.GetComponent<FadeIn>().shouldFadeOut = false;
     }
     #endregion
 
@@ -132,6 +145,7 @@ public class UIManager : MonoBehaviour {
         OptionsTitle.text = "Controller";
         optionsLevelMenu = 2;
     }
+
 
     //I was too tired, didnt know what i was doing, trying my best, sorry for this useless switch
     public void OnBackClicked()

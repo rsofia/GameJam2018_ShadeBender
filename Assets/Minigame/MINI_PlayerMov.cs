@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 [RequireComponent(typeof(Rigidbody))]
 public class MINI_PlayerMov : MonoBehaviour {
 
@@ -109,6 +109,7 @@ public class MINI_PlayerMov : MonoBehaviour {
             isAlive = false;
             other.GetComponent<SCR_EmitSound>().PlaySound();
             gameWonMenu.SetActive(true);
+            gameWonMenu.GetComponentInChildren<Button>().Select();
         }
        if(other.tag == "EasterEgg")
         {
@@ -131,6 +132,8 @@ public class MINI_PlayerMov : MonoBehaviour {
     {
         yield return new WaitForSeconds(1.0f);
         gameOverMenu.SetActive(true);
+        gameOverMenu.GetComponentInChildren<Button>().Select();
+
     }
 
     IEnumerator WaitToShowEasterEgg(Transform _easterEgg)
