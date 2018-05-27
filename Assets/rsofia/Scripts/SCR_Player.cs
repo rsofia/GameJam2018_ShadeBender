@@ -305,16 +305,16 @@ public class SCR_Player : MonoBehaviour {
     public void GameWon()
     {
         Debug.Log("Game won");
+        winMenu.SetActive(true);
         FinishLevel(winMenu.transform);
         FindObjectOfType<FileWriter>().WriteFile(SCR_Level.index);
-        winMenu.SetActive(true);
     }
 
     private void FinishLevel(Transform _menu)
     {
         SCR_InputManager.isLevelDone = true;
+        _menu.Find("TXT_Puntaje").GetComponent<Text>().text = CalculateFinalScore();
         FindObjectOfType<SCR_Pause>().PauseGame(false);
-        _menu.Find("TXT_Puntaje").GetComponent<Text>().text = "Final Score: " + CalculateFinalScore();      
     }
     #endregion
 
@@ -340,8 +340,9 @@ public class SCR_Player : MonoBehaviour {
         else if (timer.totalLevelTime <= SCR_Level.estimatedTimeInSeconds)
             extraScore += (25 / timer.totalLevelTime) * 100;
         extraScore = Mathf.RoundToInt(extraScore);
-        result = (score + extraScore).ToString();
-        result = result + " \n Time:" + timer.totalLevelTime;
+        score += extraScore;
+        result = score.ToString();
+        result = result + " \n" + timer.totalLevelTime + "s";
         return result;
 
     }
