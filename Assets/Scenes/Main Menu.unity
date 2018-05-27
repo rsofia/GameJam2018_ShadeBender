@@ -38,8 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.000037576487, g: 0.00013619113, b: 0.0032851468,
-    a: 1}
+  m_IndirectSpecularColor: {r: 0.00003220089, g: 0.00010724276, b: 0.0026472914, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -281,6 +280,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &41509153 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1519831382738466, guid: 657aeae5144370c479bab6610a09cc0a,
+    type: 2}
+  m_PrefabInternal: {fileID: 617510467}
+--- !u!114 &41509157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 41509153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 226f1552782d5a6408115ff8b20eed3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EspaniolTexto: Customizacion
+  EnglishText: Customization
+  FrancaisTexte: 
 --- !u!114 &41729740 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114858167215511952, guid: 657aeae5144370c479bab6610a09cc0a,
@@ -297,6 +315,7 @@ GameObject:
   - component: {fileID: 54336807}
   - component: {fileID: 54336809}
   - component: {fileID: 54336808}
+  - component: {fileID: 54336810}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -361,6 +380,20 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 54336806}
+--- !u!114 &54336810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 54336806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 226f1552782d5a6408115ff8b20eed3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EspaniolTexto: Extras
+  EnglishText: Extras
+  FrancaisTexte: 
 --- !u!1 &77254369
 GameObject:
   m_ObjectHideFlags: 0
@@ -469,6 +502,7 @@ GameObject:
   - component: {fileID: 90116133}
   - component: {fileID: 90116135}
   - component: {fileID: 90116134}
+  - component: {fileID: 90116136}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -533,6 +567,20 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 90116132}
+--- !u!114 &90116136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 90116132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 226f1552782d5a6408115ff8b20eed3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EspaniolTexto: Opciones
+  EnglishText: Options
+  FrancaisTexte: 
 --- !u!1 &98872779
 GameObject:
   m_ObjectHideFlags: 0
@@ -760,7 +808,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &219554955
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1707,6 +1755,7 @@ GameObject:
   - component: {fileID: 441895711}
   - component: {fileID: 441895713}
   - component: {fileID: 441895712}
+  - component: {fileID: 441895714}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -1771,6 +1820,39 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 441895710}
+--- !u!114 &441895714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 441895710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 226f1552782d5a6408115ff8b20eed3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EspaniolTexto: Opciones de Juego
+  EnglishText: Game Options
+  FrancaisTexte: 
+--- !u!1 &488364019 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1079937321291964, guid: 657aeae5144370c479bab6610a09cc0a,
+    type: 2}
+  m_PrefabInternal: {fileID: 617510467}
+--- !u!114 &488364023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 488364019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 226f1552782d5a6408115ff8b20eed3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EspaniolTexto: Atras
+  EnglishText: Back
+  FrancaisTexte: 
 --- !u!1001 &505925026
 Prefab:
   m_ObjectHideFlags: 0
@@ -2198,7 +2280,14 @@ Prefab:
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 114111001999861934, guid: c0e22aa87ae678a4ba4b49e55997f0cd,
+        type: 2}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 114612542633394656, guid: c0e22aa87ae678a4ba4b49e55997f0cd, type: 2}
+    - {fileID: 114289918662639480, guid: c0e22aa87ae678a4ba4b49e55997f0cd, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: c0e22aa87ae678a4ba4b49e55997f0cd, type: 2}
   m_IsPrefabParent: 0
 --- !u!224 &505925027 stripped
@@ -2206,6 +2295,101 @@ RectTransform:
   m_PrefabParentObject: {fileID: 224666978314007364, guid: c0e22aa87ae678a4ba4b49e55997f0cd,
     type: 2}
   m_PrefabInternal: {fileID: 505925026}
+--- !u!1 &505925028 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1725304703219964, guid: c0e22aa87ae678a4ba4b49e55997f0cd,
+    type: 2}
+  m_PrefabInternal: {fileID: 505925026}
+--- !u!114 &505925029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 505925028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 226f1552782d5a6408115ff8b20eed3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EspaniolTexto: Color Demonio
+  EnglishText: Demon Color
+  FrancaisTexte: 
+--- !u!1 &505925030 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1122843447052950, guid: c0e22aa87ae678a4ba4b49e55997f0cd,
+    type: 2}
+  m_PrefabInternal: {fileID: 505925026}
+--- !u!114 &505925031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 505925030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 226f1552782d5a6408115ff8b20eed3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EspaniolTexto: Color Angel
+  EnglishText: Angel Color
+  FrancaisTexte: 
+--- !u!1 &505925032 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1162600241409166, guid: c0e22aa87ae678a4ba4b49e55997f0cd,
+    type: 2}
+  m_PrefabInternal: {fileID: 505925026}
+--- !u!114 &505925033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 505925032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 226f1552782d5a6408115ff8b20eed3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EspaniolTexto: Confirmar
+  EnglishText: Confirm
+  FrancaisTexte: 
+--- !u!1 &505925034 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1555153369591452, guid: c0e22aa87ae678a4ba4b49e55997f0cd,
+    type: 2}
+  m_PrefabInternal: {fileID: 505925026}
+--- !u!114 &505925035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 505925034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 226f1552782d5a6408115ff8b20eed3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EspaniolTexto: Atras
+  EnglishText: Back
+  FrancaisTexte: 
+--- !u!1 &505925036 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1570834646816392, guid: c0e22aa87ae678a4ba4b49e55997f0cd,
+    type: 2}
+  m_PrefabInternal: {fileID: 505925026}
+--- !u!114 &505925037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 505925036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 226f1552782d5a6408115ff8b20eed3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EspaniolTexto: Restablecer
+  EnglishText: Restore Default
+  FrancaisTexte: 
 --- !u!1 &522965474
 GameObject:
   m_ObjectHideFlags: 0
@@ -2216,6 +2400,7 @@ GameObject:
   - component: {fileID: 522965475}
   - component: {fileID: 522965477}
   - component: {fileID: 522965476}
+  - component: {fileID: 522965478}
   m_Layer: 5
   m_Name: TXT_MusicVolume
   m_TagString: Untagged
@@ -2270,8 +2455,8 @@ MonoBehaviour:
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: 'Full Screen:'
 --- !u!222 &522965477
@@ -2280,6 +2465,20 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 522965474}
+--- !u!114 &522965478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 522965474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 226f1552782d5a6408115ff8b20eed3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EspaniolTexto: 'Pantalla Completa:'
+  EnglishText: 'Fullscreen:'
+  FrancaisTexte: 
 --- !u!1 &549942406
 GameObject:
   m_ObjectHideFlags: 0
@@ -2412,6 +2611,7 @@ GameObject:
   - component: {fileID: 575334206}
   - component: {fileID: 575334208}
   - component: {fileID: 575334207}
+  - component: {fileID: 575334209}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -2476,6 +2676,20 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 575334205}
+--- !u!114 &575334209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 575334205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 226f1552782d5a6408115ff8b20eed3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EspaniolTexto: Audio
+  EnglishText: Audio
+  FrancaisTexte: 
 --- !u!1 &577835321
 GameObject:
   m_ObjectHideFlags: 0
@@ -2602,6 +2816,7 @@ GameObject:
   - component: {fileID: 593898741}
   - component: {fileID: 593898743}
   - component: {fileID: 593898742}
+  - component: {fileID: 593898744}
   m_Layer: 5
   m_Name: TXT_FxVolume
   m_TagString: Untagged
@@ -2666,6 +2881,20 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 593898740}
+--- !u!114 &593898744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 593898740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 226f1552782d5a6408115ff8b20eed3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EspaniolTexto: 'Volumen FX:'
+  EnglishText: 'FX Volume:'
+  FrancaisTexte: 
 --- !u!1 &610135835
 GameObject:
   m_ObjectHideFlags: 0
@@ -3062,6 +3291,25 @@ RectTransform:
   m_PrefabParentObject: {fileID: 224357962789182190, guid: 657aeae5144370c479bab6610a09cc0a,
     type: 2}
   m_PrefabInternal: {fileID: 617510467}
+--- !u!1 &617510469 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1888502983836134, guid: 657aeae5144370c479bab6610a09cc0a,
+    type: 2}
+  m_PrefabInternal: {fileID: 617510467}
+--- !u!114 &617510470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 617510469}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 226f1552782d5a6408115ff8b20eed3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EspaniolTexto: Extras
+  EnglishText: Extras
+  FrancaisTexte: 
 --- !u!1 &624695757
 GameObject:
   m_ObjectHideFlags: 0
@@ -3276,6 +3524,7 @@ GameObject:
   - component: {fileID: 634619056}
   - component: {fileID: 634619058}
   - component: {fileID: 634619057}
+  - component: {fileID: 634619059}
   m_Layer: 5
   m_Name: TXT_Title
   m_TagString: Untagged
@@ -3330,8 +3579,8 @@ MonoBehaviour:
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: PURGATORY
 --- !u!222 &634619058
@@ -3340,6 +3589,20 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 634619055}
+--- !u!114 &634619059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 634619055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 226f1552782d5a6408115ff8b20eed3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EspaniolTexto: Purgatorio
+  EnglishText: Purgatory
+  FrancaisTexte: 
 --- !u!114 &637330159 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114051055888585050, guid: c0e22aa87ae678a4ba4b49e55997f0cd,
@@ -3496,6 +3759,7 @@ GameObject:
   - component: {fileID: 748779554}
   - component: {fileID: 748779556}
   - component: {fileID: 748779555}
+  - component: {fileID: 748779557}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -3560,6 +3824,20 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 748779553}
+--- !u!114 &748779557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 748779553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 226f1552782d5a6408115ff8b20eed3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EspaniolTexto: Salir
+  EnglishText: Quit Game
+  FrancaisTexte: 
 --- !u!114 &784630022 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114563413112603156, guid: c0e22aa87ae678a4ba4b49e55997f0cd,
@@ -3575,6 +3853,8 @@ GameObject:
   m_Component:
   - component: {fileID: 784915495}
   - component: {fileID: 784915496}
+  - component: {fileID: 784915497}
+  - component: {fileID: 784915498}
   m_Layer: 0
   m_Name: _GUI
   m_TagString: Untagged
@@ -3634,6 +3914,30 @@ MonoBehaviour:
   sldrRAngel: {fileID: 784630022}
   sldrBAngel: {fileID: 2079634546}
   sldrGAngel: {fileID: 1598777840}
+--- !u!114 &784915497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 784915494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8186d6b67f20fe4c8805cfc3ea7bb6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DRP_Language: {fileID: 1885242147}
+--- !u!114 &784915498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 784915494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4af291613447ad04aaeb2b1ce07d8104, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DRP_Resolution: {fileID: 610135837}
 --- !u!224 &808671137 stripped
 RectTransform:
   m_PrefabParentObject: {fileID: 224404345101573332, guid: 943cad038b8406b4485e88b230521286,
@@ -4503,6 +4807,7 @@ GameObject:
   - component: {fileID: 999866204}
   - component: {fileID: 999866206}
   - component: {fileID: 999866205}
+  - component: {fileID: 999866207}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -4567,6 +4872,20 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 999866203}
+--- !u!114 &999866207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 999866203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 226f1552782d5a6408115ff8b20eed3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EspaniolTexto: Atras
+  EnglishText: Back
+  FrancaisTexte: 
 --- !u!1 &1013339243
 GameObject:
   m_ObjectHideFlags: 0
@@ -4727,6 +5046,7 @@ GameObject:
   - component: {fileID: 1043649737}
   - component: {fileID: 1043649739}
   - component: {fileID: 1043649738}
+  - component: {fileID: 1043649740}
   m_Layer: 5
   m_Name: TXT_MasterVolume
   m_TagString: Untagged
@@ -4791,6 +5111,20 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1043649736}
+--- !u!114 &1043649740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1043649736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 226f1552782d5a6408115ff8b20eed3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EspaniolTexto: 'Lenguaje:'
+  EnglishText: 'Language:'
+  FrancaisTexte: 
 --- !u!114 &1068053956 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114600270766891568, guid: c0e22aa87ae678a4ba4b49e55997f0cd,
@@ -4974,6 +5308,7 @@ GameObject:
   - component: {fileID: 1243073583}
   - component: {fileID: 1243073585}
   - component: {fileID: 1243073584}
+  - component: {fileID: 1243073586}
   m_Layer: 5
   m_Name: TXT_MusicVolume
   m_TagString: Untagged
@@ -5038,6 +5373,20 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1243073582}
+--- !u!114 &1243073586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1243073582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 226f1552782d5a6408115ff8b20eed3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EspaniolTexto: 'Volumen Musica:'
+  EnglishText: 'Music Volume:'
+  FrancaisTexte: 
 --- !u!1 &1243548248
 GameObject:
   m_ObjectHideFlags: 0
@@ -5135,6 +5484,7 @@ GameObject:
   - component: {fileID: 1279108912}
   - component: {fileID: 1279108914}
   - component: {fileID: 1279108913}
+  - component: {fileID: 1279108915}
   m_Layer: 5
   m_Name: TXT_MasterVolume
   m_TagString: Untagged
@@ -5199,6 +5549,20 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1279108911}
+--- !u!114 &1279108915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1279108911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 226f1552782d5a6408115ff8b20eed3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EspaniolTexto: 'Resolucion:'
+  EnglishText: 'Resolution:'
+  FrancaisTexte: 
 --- !u!114 &1325229269 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114249690013849876, guid: c0e22aa87ae678a4ba4b49e55997f0cd,
@@ -5723,6 +6087,7 @@ GameObject:
   - component: {fileID: 1484380634}
   - component: {fileID: 1484380636}
   - component: {fileID: 1484380635}
+  - component: {fileID: 1484380637}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -5787,6 +6152,20 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1484380633}
+--- !u!114 &1484380637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1484380633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 226f1552782d5a6408115ff8b20eed3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EspaniolTexto: Controlador
+  EnglishText: Controller
+  FrancaisTexte: 
 --- !u!1 &1543119057
 GameObject:
   m_ObjectHideFlags: 0
@@ -5893,6 +6272,7 @@ GameObject:
   - component: {fileID: 1560240546}
   - component: {fileID: 1560240548}
   - component: {fileID: 1560240547}
+  - component: {fileID: 1560240549}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -5957,6 +6337,20 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1560240545}
+--- !u!114 &1560240549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1560240545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 226f1552782d5a6408115ff8b20eed3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EspaniolTexto: Atras
+  EnglishText: Back
+  FrancaisTexte: 
 --- !u!114 &1598777840 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114026338640248364, guid: c0e22aa87ae678a4ba4b49e55997f0cd,
@@ -6075,6 +6469,7 @@ GameObject:
   - component: {fileID: 1621990788}
   - component: {fileID: 1621990790}
   - component: {fileID: 1621990789}
+  - component: {fileID: 1621990791}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -6139,6 +6534,20 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1621990787}
+--- !u!114 &1621990791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1621990787}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 226f1552782d5a6408115ff8b20eed3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EspaniolTexto: Video
+  EnglishText: Video
+  FrancaisTexte: 
 --- !u!1 &1629637516
 GameObject:
   m_ObjectHideFlags: 0
@@ -6399,6 +6808,7 @@ GameObject:
   - component: {fileID: 1691398077}
   - component: {fileID: 1691398079}
   - component: {fileID: 1691398078}
+  - component: {fileID: 1691398080}
   m_Layer: 5
   m_Name: IMG_Controller
   m_TagString: Untagged
@@ -6421,8 +6831,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0000076294, y: 0.0000038147}
-  m_SizeDelta: {x: 336.48, y: 122.7}
+  m_AnchoredPosition: {x: 0.0000076293945, y: -17.5261}
+  m_SizeDelta: {x: 577.51, y: 210.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1691398078
 MonoBehaviour:
@@ -6443,7 +6853,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: c6696f69443212f46bafd48cea483bb1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7c30e84d6ef94ed46a2fc5be220cb9b7, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -6457,6 +6867,21 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1691398076}
+--- !u!114 &1691398080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1691398076}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8b97e7bea8675f459351b53da5d14c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LanguageControllers:
+  - {fileID: 21300000, guid: c0dded7072b5b0f4999bb8b35e49581b, type: 3}
+  - {fileID: 21300000, guid: 7c30e84d6ef94ed46a2fc5be220cb9b7, type: 3}
+  - {fileID: 21300000, guid: 4fba1ee9e3715e74fade523a84071913, type: 3}
 --- !u!1 &1694359540
 GameObject:
   m_ObjectHideFlags: 0
@@ -6790,6 +7215,7 @@ GameObject:
   - component: {fileID: 1776238534}
   - component: {fileID: 1776238536}
   - component: {fileID: 1776238535}
+  - component: {fileID: 1776238537}
   m_Layer: 5
   m_Name: TXT_TitleOptions
   m_TagString: Untagged
@@ -6812,7 +7238,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0000019073, y: 98.60003}
+  m_AnchoredPosition: {x: -0.0000019073, y: 111}
   m_SizeDelta: {x: 393.33, y: 73.75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1776238535
@@ -6844,8 +7270,8 @@ MonoBehaviour:
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: OPTIONS
 --- !u!222 &1776238536
@@ -6854,6 +7280,20 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1776238533}
+--- !u!114 &1776238537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1776238533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 226f1552782d5a6408115ff8b20eed3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EspaniolTexto: Opciones
+  EnglishText: Options
+  FrancaisTexte: 
 --- !u!1 &1778004829
 GameObject:
   m_ObjectHideFlags: 0
@@ -7116,6 +7556,7 @@ GameObject:
   - component: {fileID: 1810191137}
   - component: {fileID: 1810191139}
   - component: {fileID: 1810191138}
+  - component: {fileID: 1810191140}
   m_Layer: 5
   m_Name: TXT_MasterVolume
   m_TagString: Untagged
@@ -7180,6 +7621,20 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1810191136}
+--- !u!114 &1810191140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1810191136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 226f1552782d5a6408115ff8b20eed3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EspaniolTexto: 'Volumen Maestro:'
+  EnglishText: 'Master Volume:'
+  FrancaisTexte: 
 --- !u!1 &1840799016
 GameObject:
   m_ObjectHideFlags: 0
@@ -7367,6 +7822,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ShowMaskGraphic: 0
+--- !u!1 &1862606847 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1209414784815980, guid: 657aeae5144370c479bab6610a09cc0a,
+    type: 2}
+  m_PrefabInternal: {fileID: 617510467}
+--- !u!114 &1862606851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1862606847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 226f1552782d5a6408115ff8b20eed3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EspaniolTexto: Creditos
+  EnglishText: Credits
+  FrancaisTexte: 
 --- !u!1 &1885242145
 GameObject:
   m_ObjectHideFlags: 0
@@ -7379,7 +7853,7 @@ GameObject:
   - component: {fileID: 1885242148}
   - component: {fileID: 1885242147}
   m_Layer: 5
-  m_Name: DRP_Resolution
+  m_Name: DRP_Language
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7450,11 +7924,11 @@ MonoBehaviour:
   m_Value: 0
   m_Options:
     m_Options:
-    - m_Text: 1920 x 1080
+    - m_Text: English
       m_Image: {fileID: 0}
-    - m_Text: 1280 x 720
+    - m_Text: "Espa\xF1ol"
       m_Image: {fileID: 0}
-    - m_Text: "1024 \xD7 576"
+    - m_Text: Swahili
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
@@ -7541,6 +8015,7 @@ GameObject:
   - component: {fileID: 1900825167}
   - component: {fileID: 1900825169}
   - component: {fileID: 1900825168}
+  - component: {fileID: 1900825170}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -7605,6 +8080,20 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1900825166}
+--- !u!114 &1900825170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1900825166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 226f1552782d5a6408115ff8b20eed3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EspaniolTexto: Seleccionar Nivel
+  EnglishText: Select Level
+  FrancaisTexte: 
 --- !u!1001 &1954235367
 Prefab:
   m_ObjectHideFlags: 0
@@ -7836,7 +8325,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 1920 x 1080
+  m_Text: English
 --- !u!222 &1955916154
 CanvasRenderer:
   m_ObjectHideFlags: 0

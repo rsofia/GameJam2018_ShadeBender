@@ -9,14 +9,17 @@ using UnityEngine.UI;
 public class LanguageManager : MonoBehaviour {
 
     public Dropdown DRP_Language;
+    public static int actualLanguage;
+    void Start()
+    {
+        DRP_Language.onValueChanged.AddListener(delegate
+        {
+            SelectLanguage();
+        });
+    }
 
-    void Start () 
-	{
-        Debug.Log(DRP_Language.options[DRP_Language.value].text);
-	}
-	
-	void Update () 
-	{
-		
-	}
+    public void SelectLanguage()
+    {
+        actualLanguage = DRP_Language.value;
+    }
 }
