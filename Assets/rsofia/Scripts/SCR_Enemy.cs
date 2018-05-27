@@ -8,7 +8,7 @@ public class SCR_Enemy : SCR_EmitSound {
     [Tooltip("This is the world position in x")]
     public float positionToLean = 3;
     private float timeToLean = 3;
-       
+
     private void Start()
     {
         positionToLean = transform.position.x + 2;

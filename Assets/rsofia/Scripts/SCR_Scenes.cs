@@ -9,4 +9,9 @@ public class SCR_Scenes : MonoBehaviour {
     {
         SceneManager.LoadScene(1);
     }
+
+    public void GoToMiniGame()
+    {
+        SceneManager.LoadScene("MiniGame");
+    }
 }

@@ -9,6 +9,9 @@ TagManager:
   - Pickup
   - Goal
   - Hazard
+  - Obstacle
+  - EasterEgg
+  - Limite
   layers:
   - Default
   - TransparentFX
