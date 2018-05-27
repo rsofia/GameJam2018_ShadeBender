@@ -20,6 +20,15 @@ public class LanguageManager : MonoBehaviour {
 
     public void SelectLanguage()
     {
+        if(DRP_Language.value ==2 && actualLanguage!=2)
+        {
+            FindObjectOfType<SCR_MenuAudio>().SwitchAudio(1);
+        }
+        else if((DRP_Language.value == 1||DRP_Language.value==0) && actualLanguage == 2)
+        {
+            FindObjectOfType<SCR_MenuAudio>().SwitchAudio(0);
+        }
         actualLanguage = DRP_Language.value;
+
     }
 }

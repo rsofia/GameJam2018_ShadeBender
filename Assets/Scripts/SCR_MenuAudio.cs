@@ -4,22 +4,19 @@ using UnityEngine;
 
 public class SCR_MenuAudio : MonoBehaviour {
 
-    AudioSource mySongPlayer;
-    AudioClip[] songs;
+    public AudioSource mySongPlayer;
+    public AudioClip[] songs;
 	// Use this for initialization
 	void Start () {
-        mySongPlayer = GameObject.FindObjectOfType<AudioSource>();
         mySongPlayer.Pause();
         mySongPlayer.clip = songs[0];
         mySongPlayer.Play();
 	}
 	
-	// Update is called once per frame
-	void Update () {
-	    //if(LanguageManager.actualLanguage==2)
-        //{
-
-            
-//        }
-	}
+    public void SwitchAudio(int _song)
+    {
+        mySongPlayer.Pause();
+        mySongPlayer.clip = songs[_song];
+        mySongPlayer.Play();
+    }
 }
