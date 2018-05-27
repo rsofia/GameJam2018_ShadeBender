@@ -400,6 +400,7 @@ GameObject:
   - component: {fileID: 114069491940123672}
   - component: {fileID: 82199983659601064}
   - component: {fileID: 135561507592346732}
+  - component: {fileID: 114998768712444810}
   m_Layer: 8
   m_Name: Enemy_Angel_White
   m_TagString: Enemy
@@ -1433,6 +1434,17 @@ MonoBehaviour:
   sound: {fileID: 8300000, guid: 327b789d258d9c1479cc11b8d8f341bb, type: 3}
   damage: 1
   positionToLean: -8
+--- !u!114 &114998768712444810
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1510486108433168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76c9c722e67d2cf43a6e1f2c9b11e625, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!135 &135561507592346732
 SphereCollider:
   m_ObjectHideFlags: 1
