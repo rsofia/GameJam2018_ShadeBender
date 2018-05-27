@@ -15,9 +15,4 @@ public class SCR_Enemy : SCR_EmitSound {
         if(SCR_Level.lerpEnemies)
             LeanTween.moveX(gameObject, positionToLean, timeToLean).setLoopPingPong();
     }
-
-    private void Update()
-    {
-        transform.LookAt(Vector3.right);
-    }
 }

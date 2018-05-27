@@ -24,9 +24,11 @@ public class MINI_PlayerMov : MonoBehaviour {
     private float limitVelocity = 10;
     RaycastHit hit;
 
+    AudioSource aSrc;
     private void Start()
     {
         myRigidbody = GetComponent<Rigidbody>();
+        aSrc = GetComponent<AudioSource>();
         gameWonMenu.SetActive(false);
         gameOverMenu.SetActive(false);
 
@@ -50,6 +52,7 @@ public class MINI_PlayerMov : MonoBehaviour {
             if (Input.GetKeyDown(KeyCode.JoystickButton0) || Input.GetKeyDown(KeyCode.Space))
             {
                 anim.SetBool("Jump", true);
+                aSrc.Play();
                 Jump();
             }
 

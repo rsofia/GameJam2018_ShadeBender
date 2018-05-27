@@ -83,6 +83,7 @@ GameObject:
   - component: {fileID: 114751662371268330}
   - component: {fileID: 82800492673051510}
   - component: {fileID: 135917306574456116}
+  - component: {fileID: 114206133606470614}
   m_Layer: 9
   m_Name: Enemy_Demon_Black
   m_TagString: Enemy
@@ -716,9 +717,9 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 4656339206100014}
   - {fileID: 4582151536370002}
   - {fileID: 4581212495907956}
-  - {fileID: 4656339206100014}
   m_Father: {fileID: 4438152708197796}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1058,7 +1059,7 @@ Transform:
   - {fileID: 4876815856869084}
   - {fileID: 4293101518513410}
   m_Father: {fileID: 4014033039486496}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4582151536370002
 Transform:
@@ -1071,7 +1072,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 0.34828258}
   m_Children: []
   m_Father: {fileID: 4014033039486496}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4597216153764842
 Transform:
@@ -1167,7 +1168,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4014033039486496}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4675229084190446
 Transform:
@@ -1419,6 +1420,17 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114206133606470614
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1185422149735148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76c9c722e67d2cf43a6e1f2c9b11e625, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114751662371268330
 MonoBehaviour:
   m_ObjectHideFlags: 1
