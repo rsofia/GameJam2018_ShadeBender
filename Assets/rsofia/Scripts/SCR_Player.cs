@@ -306,14 +306,15 @@ public class SCR_Player : MonoBehaviour {
     {
         Debug.Log("Game won");
         FinishLevel(winMenu.transform);
+        FindObjectOfType<FileWriter>().WriteFile(SCR_Level.index);
         winMenu.SetActive(true);
     }
 
     private void FinishLevel(Transform _menu)
     {
+        SCR_InputManager.isLevelDone = true;
         FindObjectOfType<SCR_Pause>().PauseGame(false);
-        _menu.Find("TXT_Puntaje").GetComponent<Text>().text = "Final Score: " + CalculateFinalScore();
-
+        _menu.Find("TXT_Puntaje").GetComponent<Text>().text = "Final Score: " + CalculateFinalScore();      
     }
     #endregion
 

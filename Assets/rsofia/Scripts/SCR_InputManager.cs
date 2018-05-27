@@ -8,9 +8,11 @@ public class SCR_InputManager : MonoBehaviour {
     public SCR_Pause pause;
     public bool isPaused = false;
     public Animator playerAnim;
+    public static bool isLevelDone;
 
     private void Start()
     {
+        isLevelDone = false;
         if (player == null)
             player = FindObjectOfType<SCR_Player>();
         if (pause == null)
@@ -42,7 +44,7 @@ public class SCR_InputManager : MonoBehaviour {
                     pause.PauseGame();
                 }
 
-                if (Input.GetKeyDown(KeyCode.JoystickButton1))
+                if (Input.GetKeyDown(KeyCode.JoystickButton1) && !isLevelDone)
                 {
                     playerAnim.SetTrigger("Dash");
                     player.Dash();
@@ -71,6 +73,12 @@ public class SCR_InputManager : MonoBehaviour {
 
             
         }
-       
-	}
+
+        if (Input.GetKeyDown(KeyCode.JoystickButton1) && isLevelDone)
+        {
+            Debug.Log("I am here");
+            UnityEngine.SceneManagement.SceneManager.LoadScene("Main Menu");
+        }
+
+    }
 }
