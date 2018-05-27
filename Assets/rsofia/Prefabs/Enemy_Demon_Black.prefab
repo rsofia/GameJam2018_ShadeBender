@@ -82,6 +82,7 @@ GameObject:
   - component: {fileID: 136984834196746550}
   - component: {fileID: 114751662371268330}
   - component: {fileID: 82800492673051510}
+  - component: {fileID: 135917306574456116}
   m_Layer: 9
   m_Name: Enemy_Demon_Black
   m_TagString: Enemy
@@ -926,7 +927,7 @@ Transform:
   m_GameObject: {fileID: 1185422149735148}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.45051515, y: 0.450515, z: 0.450515}
   m_Children:
   - {fileID: 4014033039486496}
   m_Father: {fileID: 0}
@@ -1432,6 +1433,18 @@ MonoBehaviour:
   sound: {fileID: 8300000, guid: 327b789d258d9c1479cc11b8d8f341bb, type: 3}
   damage: 1
   positionToLean: 15
+--- !u!135 &135917306574456116
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1185422149735148}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 4.56
+  m_Center: {x: 0, y: 2.26, z: 0}
 --- !u!136 &136984834196746550
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -1444,7 +1457,7 @@ CapsuleCollider:
   m_Radius: 0.92
   m_Height: 5.5
   m_Direction: 1
-  m_Center: {x: 0, y: 2.53, z: 0}
+  m_Center: {x: 0, y: 2.67, z: 0}
 --- !u!137 &137036667000070574
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
